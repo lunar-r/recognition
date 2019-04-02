@@ -1,16 +1,17 @@
 import os
 import cv2
 import sys
+import gc
 import face_recognition
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from deep.dnn import DeepFace
 
-count = 0
 
 class ResThread(QThread):
     signal = pyqtSignal(str)
+
     def __init__(self):
         super(ResThread, self).__init__()
         self.img = None
@@ -37,9 +38,11 @@ class ResThread(QThread):
             res = res + name + ","
         self.signal.emit(str(res))
 
+
 class FaceThread(QThread):
     # pyqtSignal 而不是 pyqtSlot, 使用 Thread 而不是 Runnable
     signal = pyqtSignal(str)
+
     def __init__(self):
         super(FaceThread, self).__init__()
         self.model = None
@@ -47,13 +50,17 @@ class FaceThread(QThread):
         self.classifier = None
         self.class_method = None
 
+    def __del__(self):
+
+        print("Thread is deleted...")
+
     def set_img(self, img):
         self.img = img
 
-    def setWorker(self, worker):
+    def set_worker(self, worker):
         self.worker = worker
 
-    def setClassifier(self, classifier):
+    def set_classifier(self, classifier):
         self.classifier = classifier
 
     def run(self):
@@ -61,9 +68,12 @@ class FaceThread(QThread):
         res = self.worker.predict(self.img)
         self.signal.emit(str(res))
 
+
 class MainUI(QWidget):
     def __init__(self):
         super().__init__()
+        self.thread_num = 0
+        self.thread_fin = 0
         self.time_camera = QTimer()
         self.time_video = QTimer()
         self.time_flash = QTimer()
@@ -77,7 +87,7 @@ class MainUI(QWidget):
 
     def initData(self):
         self.frame = None
-        self.thread = None
+        self.thd = None
         self.img_state = False
         self.infos = ["KNeighborsClassifier", "DecisionTreeClassifier",
                  "RandomForestClassifier", "LinearSVC"]
@@ -235,30 +245,38 @@ class MainUI(QWidget):
             break
         self.label_img[idx].setPixmap(img)
 
-
     def start_face(self):
-        global count
-        count = count + 1
+
+            # gc.collect()
+        if self.thd is not None and self.thd.isFinished():
+            self.thread_fin = self.thread_fin + 1
+            print(str(self.thread_fin) + " threads finished")
+            if self.thd is not None:
+                # del self.thd
+                self.thd.quit()
+                self.thd = None
+        if self.thd is not None:
+            print("Thread is still exist, not be deleted...")
+        print("Access success")
         if self.frame is not None:
             if self.model == "Inception":
-                self.thread = FaceThread()
-                self.thread.set_img(self.frame)
-                self.thread.setWorker(self.worker)
-                self.thread.setClassifier(self.class_method)
-                self.thread.signal.connect(self.set_names)
-                print("Inception Thread start")
+                self.thd = FaceThread()
+                self.thread_num = self.thread_num + 1
+                print("create new thread : " + str(self.thread_num))
+                self.thd.set_img(self.frame)
+                self.thd.set_worker(self.worker)
+                self.thd.set_classifier(self.class_method)
+                self.thd.signal.connect(self.set_names)
             else:
-                self.thread = ResThread()
-                self.thread.set_img(self.frame)
-                self.thread.set_dict(self.known_names, self.known_encodings)
-                self.thread.signal.connect(self.set_names)
-                print("ResNet thread start")
-                print("The count is " + count)
-            self.thread.start()
+                self.thd = ResThread()
+                self.thd.set_img(self.frame)
+                self.thd.set_dict(self.known_names, self.known_encodings)
+                self.thd.signal.connect(self.set_names)
+            self.thd.start()
 
     def open_face(self):
         if self.time_flash.isActive() is False:
-                self.time_flash.start(1000)
+                self.time_flash.start(2000)
                 self.btn_face_reco.setText(u"关闭人脸识别")
         else:
             self.time_flash.stop()
@@ -359,6 +377,7 @@ class MainUI(QWidget):
             QCloseEvent.accept()
         else:
             QCloseEvent.ignore()
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
