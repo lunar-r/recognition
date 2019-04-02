@@ -1,7 +1,6 @@
 import os
 import cv2
 import sys
-import gc
 import face_recognition
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
@@ -39,19 +38,24 @@ class ResThread(QThread):
         self.signal.emit(str(res))
 
 
-class FaceThread(QThread):
-    # pyqtSignal 而不是 pyqtSlot, 使用 Thread 而不是 Runnable
+class Assistant(QObject):
     signal = pyqtSignal(str)
 
+    def run(self, res):
+        self.signal.emit(str(res))
+
+
+class FaceThread(QRunnable):
     def __init__(self):
         super(FaceThread, self).__init__()
+        self.img = None
         self.model = None
         self.worker = None
         self.classifier = None
         self.class_method = None
+        self.helper = Assistant()
 
     def __del__(self):
-
         print("Thread is deleted...")
 
     def set_img(self, img):
@@ -66,7 +70,7 @@ class FaceThread(QThread):
     def run(self):
         self.worker.train(self.classifier)
         res = self.worker.predict(self.img)
-        self.signal.emit(str(res))
+        self.helper.run(res)
 
 
 class MainUI(QWidget):
@@ -81,13 +85,14 @@ class MainUI(QWidget):
         self.worker = DeepFace()
         self.model = "Inception"
         self.class_method = "KNeighborsClassifier"
-        self.initData()
-        self.initUI()
-        self.initSlot()
+        self.init_data()
+        self.init_ui()
+        self.init_slot()
 
-    def initData(self):
+    def init_data(self):
         self.frame = None
         self.thd = None
+        self.pool = QThreadPool.globalInstance()
         self.img_state = False
         self.infos = ["KNeighborsClassifier", "DecisionTreeClassifier",
                  "RandomForestClassifier", "LinearSVC"]
@@ -114,7 +119,7 @@ class MainUI(QWidget):
         self.known_encodings = encodings
         print("Known data are loaded...")
 
-    def initSlot(self):
+    def init_slot(self):
         self.time_camera.timeout.connect(self.show_camera)
         self.time_video.timeout.connect(self.show_video)
         self.time_flash.timeout.connect(self.start_face)
@@ -129,7 +134,7 @@ class MainUI(QWidget):
         self.combox_classifier.activated[str].connect(self.select_classifier)
         self.combox_model.activated[str].connect(self.select_model)
 
-    def initUI(self):
+    def init_ui(self):
 
         left_box = QWidget()
         right_box = QWidget()
@@ -246,18 +251,6 @@ class MainUI(QWidget):
         self.label_img[idx].setPixmap(img)
 
     def start_face(self):
-
-            # gc.collect()
-        if self.thd is not None and self.thd.isFinished():
-            self.thread_fin = self.thread_fin + 1
-            print(str(self.thread_fin) + " threads finished")
-            if self.thd is not None:
-                # del self.thd
-                self.thd.quit()
-                self.thd = None
-        if self.thd is not None:
-            print("Thread is still exist, not be deleted...")
-        print("Access success")
         if self.frame is not None:
             if self.model == "Inception":
                 self.thd = FaceThread()
@@ -266,13 +259,13 @@ class MainUI(QWidget):
                 self.thd.set_img(self.frame)
                 self.thd.set_worker(self.worker)
                 self.thd.set_classifier(self.class_method)
-                self.thd.signal.connect(self.set_names)
+                self.thd.helper.signal.connect(self.set_names)
             else:
                 self.thd = ResThread()
                 self.thd.set_img(self.frame)
                 self.thd.set_dict(self.known_names, self.known_encodings)
                 self.thd.signal.connect(self.set_names)
-            self.thd.start()
+            self.pool.start(self.thd)
 
     def open_face(self):
         if self.time_flash.isActive() is False:
