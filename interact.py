@@ -8,12 +8,19 @@ from PyQt5.QtWidgets import *
 from deep.dnn import DeepFace
 
 
-class ResThread(QThread):
+class Assistant(QObject):
     signal = pyqtSignal(str)
 
+    def run(self, res):
+        print("emit msg")
+        self.signal.emit(str(res))
+
+
+class ResThread(QRunnable):
     def __init__(self):
         super(ResThread, self).__init__()
         self.img = None
+        self.helper = Assistant()
         self.known_face_names = None
         self.known_face_encodings = None
 
@@ -27,6 +34,7 @@ class ResThread(QThread):
     def run(self):
         face_locations = face_recognition.face_locations(self.img)
         face_encodings = face_recognition.face_encodings(self.img, face_locations)
+        print("ready to compare")
         res = ""
         for face_encoding in face_encodings:
             matches = face_recognition.compare_faces(self.known_face_encodings, face_encoding)
@@ -35,14 +43,9 @@ class ResThread(QThread):
                 first_match_index = matches.index(True)
                 name = self.known_face_names[first_match_index]
             res = res + name + ","
-        self.signal.emit(str(res))
-
-
-class Assistant(QObject):
-    signal = pyqtSignal(str)
-
-    def run(self, res):
-        self.signal.emit(str(res))
+            print("Add results .. ")
+        print("ready emit")
+        self.helper.run(res)
 
 
 class FaceThread(QRunnable):
@@ -69,14 +72,15 @@ class FaceThread(QRunnable):
 
     def run(self):
         self.worker.train(self.classifier)
-        # res = self.worker.predict(self.img)
-        res = "Rowing"
+        res = self.worker.predict(self.img)
+        # res = "Rowing"
         self.helper.run(res)
 
 
 class MainUI(QWidget):
     def __init__(self):
         super().__init__()
+        self.count = 0
         self.time_camera = QTimer()
         self.time_video = QTimer()
         self.time_flash = QTimer()
@@ -140,16 +144,17 @@ class MainUI(QWidget):
         left_in_box = QWidget()
 
         # left
-        self.label_img_1 = QLabel()
-        self.label_img_2 = QLabel()
-        self.label_img_3 = QLabel()
-        self.label_img_4 = QLabel()
+        self.label_img_1, self.label_img_2, self.label_img_3, self.label_img_4 = QLabel(), QLabel(), QLabel(), QLabel()
+        self.label_img = [self.label_img_1, self.label_img_2, self.label_img_3, self.label_img_4]
+        for item in self.label_img:
+            item.setFixedSize(300, 300)
+            item.setScaledContents(True)
+
         self.name_img_1 = QLabel("Unknown", self)
         self.name_img_2 = QLabel("Unknown", self)
         self.name_img_3 = QLabel("Unknown", self)
         self.name_img_4 = QLabel("Unknown", self)
 
-        self.label_img = [self.label_img_1, self.label_img_2, self.label_img_3, self.label_img_4]
         self.name_infos = [self.name_img_1, self.name_img_2, self.name_img_3, self.name_img_4]
         self.label_video = QLabel()
         self.label_video.setFixedSize(641, 481)
@@ -235,14 +240,18 @@ class MainUI(QWidget):
         for i, name in enumerate(names):
             if i < 4:
                 # 展示识别到的信息即可
-                self.set_name(i, name)
-                self.set_label(i, name)
+                if name != "Unknown":
+                    print(type(name))
+                    print(name)
+                    self.set_name(i, name)
+                    self.set_label(i, name)
 
     def set_name(self, idx, data):
         self.name_infos[idx].setText(data)
 
     def set_label(self, idx, name):
         img = None
+        print("in set label func, name: " + name)
         path = self.img_url + name
         for file in os.listdir(path):
             file = path + "/" + file
@@ -251,7 +260,6 @@ class MainUI(QWidget):
             break
         print(img.height())
         self.label_img[idx].setPixmap(img)
-        self.label_img[idx].setScaledContents(True)
 
     def start_face(self):
         if self.frame is not None:
@@ -263,9 +271,11 @@ class MainUI(QWidget):
                 self.thd.helper.signal.connect(self.set_names)
             else:
                 self.thd = ResThread()
+                self.count = self.count + 1
+                print("ResThread Num : " + str(self.count) + " Start ..")
                 self.thd.set_img(self.frame)
                 self.thd.set_dict(self.known_names, self.known_encodings)
-                self.thd.signal.connect(self.set_names)
+                self.thd.helper.signal.connect(self.set_names)
             self.pool.start(self.thd)
 
     def open_face(self):
@@ -301,10 +311,7 @@ class MainUI(QWidget):
                 self.time_video.start(30)
                 self.btn_video.setText("关闭视频")
         else:
-            self.time_video.stop()
-            self.cap.release()
-            self.label_video.clear()
-            self.btn_video.setText(u'打开视频')
+            self.close_video()
 
     def show_camera(self):
         ret, self.frame = self.cap.read()
@@ -314,8 +321,18 @@ class MainUI(QWidget):
         self.showImage = QImage(show.data, show.shape[1], show.shape[0], QImage.Format_RGB888)
         self.label_video.setPixmap(QPixmap.fromImage(self.showImage))
 
+    def close_video(self):
+        self.time_video.stop()
+        self.cap.release()
+        self.label_video.clear()
+        self.btn_video.setText(u'打开视频')
+        for i in range(4):
+            self.label_img[i].clear()
+
     def show_video(self):
         ret, self.frame = self.cap.read()
+        if ret is False:
+            self.close_video()
         show = cv2.resize(self.frame, (640, 480))
         show = cv2.cvtColor(show, cv2.COLOR_BGR2RGB)
 

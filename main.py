@@ -29,6 +29,7 @@ class Slot(QWidget):
     def __init__(self):
         super().__init__()
         self.pool = QThreadPool.globalInstance()
+        print(self.pool.maxThreadCount())
         self.img_url = "source/images/"
         self.classifier = "KNeighborsClassifier"
         # self.img = cv2.imread("errors.jpg")
