@@ -69,15 +69,14 @@ class FaceThread(QRunnable):
 
     def run(self):
         self.worker.train(self.classifier)
-        res = self.worker.predict(self.img)
+        # res = self.worker.predict(self.img)
+        res = "Rowing"
         self.helper.run(res)
 
 
 class MainUI(QWidget):
     def __init__(self):
         super().__init__()
-        self.thread_num = 0
-        self.thread_fin = 0
         self.time_camera = QTimer()
         self.time_video = QTimer()
         self.time_flash = QTimer()
@@ -244,18 +243,20 @@ class MainUI(QWidget):
 
     def set_label(self, idx, name):
         img = None
-        path = self.img_url + "/" + name
+        path = self.img_url + name
         for file in os.listdir(path):
+            file = path + "/" + file
+            print(file)
             img = QPixmap(file)
             break
+        print(img.height())
         self.label_img[idx].setPixmap(img)
+        self.label_img[idx].setScaledContents(True)
 
     def start_face(self):
         if self.frame is not None:
             if self.model == "Inception":
                 self.thd = FaceThread()
-                self.thread_num = self.thread_num + 1
-                print("create new thread : " + str(self.thread_num))
                 self.thd.set_img(self.frame)
                 self.thd.set_worker(self.worker)
                 self.thd.set_classifier(self.class_method)
