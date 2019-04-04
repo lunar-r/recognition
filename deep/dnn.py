@@ -57,21 +57,21 @@ def load_metadata(path):
 class DeepFace:
     def __init__(self):
         self.pre_model = create_model()
-        #  inception architecture
         self.pre_model.load_weights('./deep/weights/nn4.small2.v1.h5')
-
-        self.metadata = load_metadata('./deep/images')
-        # Initialize the OpenFace face alignment utility
         self.alignment = AlignDlib('./deep/models/landmarks.dat')
-        self.embedded = np.zeros((self.metadata.shape[0], 128))
-        self.newdata = None
+        self.metadata = None
+        self.embedded = None
         self.classifier = None
 
-        print(self.embedded.shape)
-        print(self.embedded.size)
+    def pre_train(self, path):
+        self.metadata = load_metadata(path)
+        self.embedded = np.zeros((self.metadata.shape[0], 128))
+
         for i, m in enumerate(self.metadata):
             img = load_image(m.image_path())
             img = self.align_image(img)
+            if img is None:
+                continue
             # scale RGB values to interval [0,1]
             img = (img / 255.).astype(np.float32)
             # obtain embedding vector for image
@@ -84,61 +84,17 @@ class DeepFace:
         self.encoder.fit(targets)
         # 将各种标签分配一个可数的连续编号
         self.y = self.encoder.transform(targets)
-
-    def pre_train(self, path):
-        print("Before load data")
-        self.newdata = load_metadata(path)
-        print("After load data..")
-        last_idx = self.embedded.shape[0]
-        print("after get index of zero")
-        embedded = np.zeros((self.metadata.shape[0] + self.newdata.shape[0], 128))
-        print("create new embedded")
-        embedded[:self.embedded.shape[0]] = self.embedded
-        self.embedded = embedded
-        print(self.newdata.shape)
-        for i, m in enumerate(self.newdata):
-            img = load_image(m.image_path())
-            img = self.align_image(img)
-            # scale RGB values to interval [0,1]
-            img = (img / 255.).astype(np.float32)
-            # obtain embedding vector for image
-            self.embedded[last_idx + i] = self.pre_model.predict(np.expand_dims(img, axis=0))[0]
-        print("save new embeddings")
-        target1 = np.array([m.name for m in self.metadata])
-        target2 = np.array([m.name for m in self.newdata])
-        targets = np.append(target1, target2)
-
-        self.encoder = LabelEncoder()
-        print("fit targets")
-        self.encoder.fit(targets)
-
-        self.y = self.encoder.transform(targets)
-        print(self.embedded.shape)
+        print("inception net pre train finish ...")
 
     def align_image(self, img):
         return self.alignment.align(96, img, self.alignment.getLargestFaceBoundingBox(img),
                                landmarkIndices=AlignDlib.OUTER_EYES_AND_NOSE)
 
     def train(self, classifier=LinearSVC):
-        print("Into train")
-        # self.newdata 未初始化， 故访问出错导致退出， 应将其在初始化的时候置为 None
-        # 不能写成 if not self.newdata, 不是 CPP， 这样写会编码错误。。。
-        if self.newdata is None:
-            # 偶数来测试，奇数来训练
-            self.train_idx = np.arange(self.metadata.shape[0]) % 2 != 0
-            self.test_idx = np.arange(self.metadata.shape[0]) % 2 == 0
-        else:
-            self.train_idx = np.arange(self.metadata.shape[0] + self.newdata.shape[0]) % 2 != 0
-            self.test_idx = np.arange(self.metadata.shape[0] + self.newdata.shape[0]) % 2 == 0
-
-        X_train = self.embedded[self.train_idx]
-        X_test = self.embedded[self.test_idx]
-
-        y_train = self.y[self.train_idx]
-        y_test = self.y[self.test_idx]
+        X_train = self.embedded
+        y_train = self.y
         print("use Method" + str(classifier) + "to train model.")
 
-        # KNN / SVM / DTREE / FOREST
         self.classifier = globals()[classifier]()
         self.classifier.fit(X_train, y_train)
 

@@ -12,7 +12,6 @@ class Assistant(QObject):
     signal = pyqtSignal(str)
 
     def run(self, res):
-        print("emit msg")
         self.signal.emit(str(res))
 
 
@@ -34,17 +33,14 @@ class ResThread(QRunnable):
     def run(self):
         face_locations = face_recognition.face_locations(self.img)
         face_encodings = face_recognition.face_encodings(self.img, face_locations)
-        print("ready to compare")
         res = ""
         for face_encoding in face_encodings:
             matches = face_recognition.compare_faces(self.known_face_encodings, face_encoding)
-            name = "Unknown"
+            name = "unknown"
             if True in matches:
                 first_match_index = matches.index(True)
                 name = self.known_face_names[first_match_index]
             res = res + name + ","
-            print("Add results .. ")
-        print("ready emit")
         self.helper.run(res)
 
 
@@ -58,9 +54,6 @@ class FaceThread(QRunnable):
         self.class_method = None
         self.helper = Assistant()
 
-    def __del__(self):
-        print("Thread is deleted...")
-
     def set_img(self, img):
         self.img = img
 
@@ -73,7 +66,6 @@ class FaceThread(QRunnable):
     def run(self):
         self.worker.train(self.classifier)
         res = self.worker.predict(self.img)
-        # res = "Rowing"
         self.helper.run(res)
 
 
@@ -99,7 +91,6 @@ class MainUI(QWidget):
         self.img_state = False
         self.infos = ["KNeighborsClassifier", "DecisionTreeClassifier",
                  "RandomForestClassifier", "LinearSVC"]
-
         self.img_url = "source/images/"
         harr_filepath = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
         self.classifier = cv2.CascadeClassifier(harr_filepath)  # 加载人脸特征分类器
@@ -111,16 +102,22 @@ class MainUI(QWidget):
             return
         names = []
         encodings = []
+        print(root_dir)
         for name in os.listdir(root_dir):
             names.append(name)
             for file in os.listdir(os.path.join(root_dir, name)):
-                img = face_recognition.load_image_file(root_dir + "/"+ name + "/"+ file)
-                encoding = face_recognition.face_encodings(img)[0]
+                img = face_recognition.load_image_file(root_dir + "/" + name + "/" + file)
+                temp = face_recognition.face_encodings(img)
+                if len(temp) == 0:
+                    print(img.shape)
+                    print(name)
+                    sys.exit(0)
+                encoding = temp[0]
                 encodings.append(encoding)
                 break
         self.known_names = names
         self.known_encodings = encodings
-        print("Known data are loaded...")
+        print("Known data are loaded (for resNet)...")
 
     def init_slot(self):
         self.time_camera.timeout.connect(self.show_camera)
@@ -147,17 +144,17 @@ class MainUI(QWidget):
         self.label_img_1, self.label_img_2, self.label_img_3, self.label_img_4 = QLabel(), QLabel(), QLabel(), QLabel()
         self.label_img = [self.label_img_1, self.label_img_2, self.label_img_3, self.label_img_4]
         for item in self.label_img:
-            item.setFixedSize(300, 300)
+            item.setFixedSize(256, 256)
             item.setScaledContents(True)
 
-        self.name_img_1 = QLabel("Unknown", self)
-        self.name_img_2 = QLabel("Unknown", self)
-        self.name_img_3 = QLabel("Unknown", self)
-        self.name_img_4 = QLabel("Unknown", self)
+        self.name_img_1 = QLabel("unknown", self)
+        self.name_img_2 = QLabel("unknown", self)
+        self.name_img_3 = QLabel("unknown", self)
+        self.name_img_4 = QLabel("unknown", self)
 
         self.name_infos = [self.name_img_1, self.name_img_2, self.name_img_3, self.name_img_4]
         self.label_video = QLabel()
-        self.label_video.setFixedSize(641, 481)
+        self.label_video.setFixedSize(640, 480)
         self.label_video.setAutoFillBackground(False)
 
         #right
@@ -240,7 +237,7 @@ class MainUI(QWidget):
         for i, name in enumerate(names):
             if i < 4:
                 # 展示识别到的信息即可
-                if name != "Unknown":
+                if str.lower(name) != "unknown":
                     print(type(name))
                     print(name)
                     self.set_name(i, name)
@@ -315,7 +312,7 @@ class MainUI(QWidget):
 
     def show_camera(self):
         ret, self.frame = self.cap.read()
-        show = cv2.resize(self.frame, (640, 480))
+        show = cv2.resize(self.frame, (512, 384))
         show = cv2.cvtColor(show, cv2.COLOR_BGR2RGB)  # 这里指的是显示原图
         # opencv 读取图片的样式，不能通过Qlabel进行显示，需要转换为Qimage QImage(uchar * data, int width,
         self.showImage = QImage(show.data, show.shape[1], show.shape[0], QImage.Format_RGB888)
@@ -328,6 +325,7 @@ class MainUI(QWidget):
         self.btn_video.setText(u'打开视频')
         for i in range(4):
             self.label_img[i].clear()
+            self.name_infos[i].clear()
 
     def show_video(self):
         ret, self.frame = self.cap.read()
