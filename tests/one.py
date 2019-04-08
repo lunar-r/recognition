@@ -12,7 +12,3 @@ for item in f:
     print(old, " --> ", new)
     n = n + 1
 
-
-    256
-    128
-    384
