@@ -26,8 +26,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.thd = None
         self.pool = QThreadPool.globalInstance()
         self.img_state = False
-        self.infos = ["KNeighborsClassifier", "DecisionTreeClassifier", "RandomForestClassifier", "LinearSVC"]
         self.img_url = "source/images/"
+        self.infos = ["KNeighborsClassifier", "DecisionTreeClassifier", "RandomForestClassifier", "LinearSVC"]
         self.harr_filepath = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
         self.classifier = cv2.CascadeClassifier(self.harr_filepath)  # 加载人脸特征分类器
 
@@ -35,9 +35,19 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.worker.pre_train(self.img_url)
 
         self.set_ui(self)
+        self.set_data()
+        self.set_slot()
         self.setWindowTitle("FaceSystem")
         self.setWindowIcon(QIcon("./source/logos/apple.png"))
         self.show()
+
+    def set_data(self):
+        self.img_infos = [self.label_img_info_1, self.label_img_info_2, self.label_img_info_3, self.label_img_info_4]
+        self.img_shows = [self.label_img_show_1, self.label_img_show_2, self.label_img_show_3, self.label_img_show_4]
+        for item in self.img_shows:
+            item.setFixedSize(191, 61)
+            item.setScaledContents(True)
+        print("set labels done...")
 
     def set_slot(self):
         self.time_camera.timeout.connect(self.show_camera)
@@ -58,8 +68,129 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.btn_open_video.clicked.connect(self.open_video)
         self.btn_save_img.clicked.connect(self.save_img)
 
-        self.btn_select_algo.clicked.connect(self.select_algo)
+        self.btn_select_algo.clicked.connect(self.select_model)
         self.btn_select_class.clicked.connect(self.select_classifier)
+
+        print("set slots done...")
+
+    def show_camera(self):
+        ret, self.frame = self.cap.read()
+        show = cv2.resize(self.frame, (512, 384))
+        show = cv2.cvtColor(show, cv2.COLOR_BGR2RGB)
+        # opencv 读取图片的样式，不能通过Qlabel进行显示，需要转换为Qimage QImage(uchar * data, int width,
+        gray_image = cv2.cvtColor(show, cv2.COLOR_BGR2GRAY)
+        faces = self.classifier.detectMultiScale(gray_image, 1.3, 5)  # 1.3和5是特征的最小、最大检测窗口，它改变检测结果也会改变
+        for (x, y, w, h) in faces:
+            cv2.rectangle(show, (x, y), (x + w, y + h), (0, 255, 0), 2)  # 画出人脸
+        self.showImage = QImage(show.data, show.shape[1], show.shape[0], QImage.Format_RGB888)
+        self.label_video.setPixmap(QPixmap.fromImage(self.showImage))
+
+    def show_video(self):
+        ret, self.frame = self.cap.read()
+        if ret is False:
+            self.close_video()
+        show = cv2.resize(self.frame, (512, 384))
+        show = cv2.cvtColor(show, cv2.COLOR_BGR2RGB)
+        # opencv 读取图片的样式，不能通过Qlabel进行显示，需要转换为Qimage QImage(uchar * data, int width,
+        gray_image = cv2.cvtColor(show, cv2.COLOR_BGR2GRAY)
+        faces = self.classifier.detectMultiScale(gray_image, 1.3, 5)  # 1.3和5是特征的最小、最大检测窗口，它改变检测结果也会改变
+        for (x, y, w, h) in faces:
+            cv2.rectangle(show, (x, y), (x + w, y + h), (0, 255, 0), 2)  # 画出人脸
+        self.showImage = QImage(show.data, show.shape[1], show.shape[0], QImage.Format_RGB888)
+        self.label_video.setPixmap(QPixmap.fromImage(self.showImage))
+
+    def start_face(self):
+        if self.frame is not None:
+            if self.model == "Inception":
+                self.thd = FaceThread()
+                self.thd.set_img(self.frame)
+                self.thd.set_worker(self.worker)
+                self.thd.set_classifier(self.class_method)
+                self.thd.helper.signal.connect(self.set_names)
+            else:
+                self.thd = ResThread()
+                self.thd.set_img(self.frame)
+                self.thd.set_dict(self.known_names, self.known_encodings)
+                self.thd.helper.signal.connect(self.set_names)
+            self.pool.start(self.thd)
+
+    def face_detect(self):
+        # use a state to control whether draw box of person or not.
+        pass
+
+    def face_reco(self):
+        if self.time_flash.isActive() is False:
+            self.time_flash.start(2000)
+            self.btn_face_reco.setText(u"关闭人脸识别")
+        else:
+            self.time_flash.stop()
+            self.btn_face_reco.setText(u"打开人脸识别")
+
+    def face_analysis(self):
+        pass
+
+    def data_anal(self):
+        pass
+
+    def data_list(self):
+        pass
+
+    def start_set(self):
+        pass
+
+    def data_set(self):
+        pass
+
+    def open_camera(self):
+        if self.time_camera.isActive() is False:
+            flag = self.cap.open(0)
+            if flag is False:
+                QMessageBox.warning(self, u"Warning", u"请检测相机与电脑是否连接正确", buttons=QMessageBox.Ok, defaultButton=QMessageBox.Ok)
+            else:
+                self.time_camera.start(30)
+                self.btn_open_camera.setText("关闭相机")
+        else:
+            self.close_source("camera")
+
+    def open_video(self):
+        if self.time_video.isActive() is False:
+            fname, type = QFileDialog.getOpenFileName(self, 'Open File', "D:/UserInfo/workDir/face/face_system", "Video Files (*.mp4 *.avi)")
+            flag = self.cap.open(fname)
+            if flag is False:
+                # 使用u， 使得中文以 unicode格式存储，保证不出现乱码
+                QMessageBox.warning(self, u"Warning", u"请检测视频是否损坏", buttons=QMessageBox.Ok,  defaultButton=QMessageBox.Ok)
+            else:
+                self.time_video.start(30)
+                self.btn_open_video.setText("关闭视频")
+        else:
+            self.close_source("video")
+
+    def save_img(self):
+        self.time_camera.stop()
+        self.time_video.stop()
+        name, state = QInputDialog.getText(self, "人名", "请输入保存者名称", QLineEdit.Normal, "Liming")
+        if name is "LiMing" or state is False:
+            return
+        img_path = os.path.join(self.img_url + name)
+        folder = os.path.exists(img_path)
+        if not folder:
+            os.mkdir(img_path)
+        img_path = img_path + "/"
+        cur = 10001
+        while os.path.isfile(img_path + name + "_" + str(cur) + ".jpg"):
+            cur = cur + 1
+        path = img_path + name + "_" + str(cur) + ".jpg"
+        self.showImage.save(path)
+        self.time_video.start(30)
+        self.time_camera.start(30)
+
+    def select_model(self, model):
+        self.model = model
+        print("Change model to : " + model)
+
+    def select_classifier(self, classifier):
+        self.class_method = classifier
+        print("Select classifier : " + classifier)
 
     def load_known(self, root_dir):
         if root_dir is None:
@@ -94,30 +225,33 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                     self.set_name(i, name)
                     self.set_label(i, name)
 
-    # to fix
     def set_name(self, idx, data):
-        self.name_infos[idx].setText(data)
+        self.img_infos[idx].setText(data)
 
-    # to fix
     def set_label(self, idx, name):
         img = None
-        print("in set label func, name: " + name)
+        # print("in set label func, name: " + name)
         path = self.img_url + name
         for file in os.listdir(path):
             file = path + "/" + file
-            print(file)
+            # print(file)
             img = QPixmap(file)
             break
-        print(img.height())
-        self.label_img[idx].setPixmap(img)
+        # print(img.height())
+        self.img_shows[idx].setPixmap(img)
 
-    def select_classifier(self, classifier):
-        self.class_method = classifier
-        print("Select classifier : " + classifier)
-
-    def select_model(self, model):
-        self.model = model
-        print("Change model to : " + model)
+    def close_source(self, data):
+        self.cap.release()
+        self.label_video.clear()
+        for i in range(4):
+            self.img_infos[i].clear()
+            self.img_shows[i].clear()
+        if data == "video":
+            self.time_video.stop()
+            self.btn_open_video.setText(u'打开视频')
+        else:
+            self.time_camera.stop()
+            self.btn_open_camera.setText(u'打开摄像头')
 
 
 if __name__ == '__main__':

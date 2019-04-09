@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dcc6b798-3a20-42d8-83d4-5ab623ff361e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rowing.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Rowing.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ternate.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Ternate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/init.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interact.py" beforeDir="false" afterPath="$PROJECT_DIR$/interact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ui_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/people.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/remain.py" beforeDir="false" afterPath="$PROJECT_DIR$/remain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/second.py" beforeDir="false" afterPath="$PROJECT_DIR$/second.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/second.ui" beforeDir="false" afterPath="$PROJECT_DIR$/second.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/testUI.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,13 +23,13 @@
     <SUITE FILE_PATH="coverage/face_system$one.coverage" NAME="one Coverage Results" MODIFIED="1554344632891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1554346986764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$ui_test.coverage" NAME="ui_test Coverage Results" MODIFIED="1554776996770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/face_system$remain.coverage" NAME="remain Coverage Results" MODIFIED="1554778760312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/face_system$remain.coverage" NAME="remain Coverage Results" MODIFIED="1554807798295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-2040295204">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.15" value="1" />
@@ -45,14 +37,15 @@
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="5" />
-          <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.21" value="2" />
+          <entry key="project.open.time.22" value="2" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.opened" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -60,26 +53,26 @@
           <entry key="html" value="1" />
           <entry key="jpg" value="14" />
           <entry key="png" value="2" />
-          <entry key="py" value="61" />
+          <entry key="py" value="62" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
           <entry key="Image" value="16" />
-          <entry key="Python" value="61" />
+          <entry key="Python" value="62" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="21" />
-          <entry key="py" value="7246" />
+          <entry key="py" value="7914" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="21" />
-          <entry key="Python" value="7246" />
+          <entry key="Python" value="7914" />
         </counts>
       </usages-collector>
     </session>
@@ -89,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/interact.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="244" selection-start-line="244" selection-end-line="257" selection-end-column="42" />
+            <state relative-caret-position="492">
+              <caret line="339" column="22" selection-start-line="339" selection-start-column="13" selection-end-line="339" selection-end-column="22" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#201#285#0" />
@@ -98,9 +91,6 @@
                 <element signature="e#1328#1897#0" />
                 <element signature="e#1955#2330#0" />
                 <element signature="e#2365#2898#0" />
-                <element signature="e#2944#3704#0" />
-                <element signature="e#3739#4332#0" />
-                <element signature="e#4366#8263#0" />
                 <marker date="1554782279159" expanded="true" signature="11766:12007" ph="..." />
               </folding>
             </state>
@@ -110,14 +100,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/remain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="100" column="13" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
+            <state relative-caret-position="88">
+              <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#1837#1921#0" />
-                <element signature="e#1956#2928#0" />
-                <element signature="e#2964#3533#0" />
-                <marker date="1554782279103" expanded="true" signature="247:3960" ph="..." />
+                <element signature="e#2661#3059#0" />
+                <element signature="e#3103#3739#0" />
+                <element signature="e#4101#4820#0" />
+                <element signature="e#4751#4755#0" />
+                <element signature="e#4800#5048#0" />
+                <element signature="e#5349#5742#0" />
+                <element signature="e#5835#6410#0" />
+                <element signature="e#6456#7133#0" />
+                <element signature="e#5076#5138#0" />
+                <element signature="e#5193#5274#0" />
+                <element signature="e#2309#3074#0" />
+                <element signature="e#3115#3490#0" />
+                <element signature="e#3548#3582#0" />
+                <element signature="e#3641#3956#0" />
+                <element signature="e#9167#9545#0" />
+                <element signature="e#4340#4424#0" />
+                <element signature="e#4459#5431#0" />
+                <element signature="e#5467#6036#0" />
+                <marker date="1554807798222" expanded="true" signature="247:9525" ph="..." />
+                <marker date="1554807798222" expanded="true" signature="1402:1796" ph="..." />
+                <marker date="1554807798222" expanded="true" signature="5410:7445" ph="..." />
               </folding>
             </state>
           </provider>
@@ -131,8 +138,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/second.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="179" selection-start-line="179" selection-end-line="179" />
+            <state relative-caret-position="258">
+              <caret line="101" column="24" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -161,7 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nn4.small2.v1.h5</find>
       <find>start</find>
       <find>2000</find>
       <find>thread</find>
@@ -177,7 +183,6 @@
       <find>classifier</find>
       <find>worker.tr</find>
       <find>self</find>
-      <find>count</find>
       <find>unknown</find>
       <find>Unknown</find>
       <find>clos</find>
@@ -186,6 +191,13 @@
       <find>train_idx</find>
       <find>pre_train</find>
       <find>retranslateUi</find>
+      <find>name_infos</find>
+      <find>img_url</find>
+      <find>label_img</find>
+      <find>show_camera</find>
+      <find>count</find>
+      <find>label_video</find>
+      <find>showImage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,8 +214,8 @@
         <option value="$PROJECT_DIR$/tests/one.py" />
         <option value="$PROJECT_DIR$/tests/face_analysis.py" />
         <option value="$PROJECT_DIR$/tests/start.py" />
-        <option value="$PROJECT_DIR$/second.py" />
         <option value="$PROJECT_DIR$/interact.py" />
+        <option value="$PROJECT_DIR$/second.py" />
         <option value="$PROJECT_DIR$/remain.py" />
       </list>
     </option>
@@ -214,7 +226,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -430,10 +442,32 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1536" height="864" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3145917" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.3266399" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32991013" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27727857" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3992298" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991013" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3266399" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -454,7 +488,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -591,6 +625,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/main_ui.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/start.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -604,18 +641,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/second.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="179" selection-start-line="179" selection-end-line="179" />
+        <state relative-caret-position="258">
+          <caret line="101" column="24" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/main_ui.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/interact.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="244" selection-start-line="244" selection-end-line="257" selection-end-column="42" />
+        <state relative-caret-position="492">
+          <caret line="339" column="22" selection-start-line="339" selection-start-column="13" selection-end-line="339" selection-end-column="22" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#201#285#0" />
@@ -623,9 +657,6 @@
             <element signature="e#1328#1897#0" />
             <element signature="e#1955#2330#0" />
             <element signature="e#2365#2898#0" />
-            <element signature="e#2944#3704#0" />
-            <element signature="e#3739#4332#0" />
-            <element signature="e#4366#8263#0" />
             <marker date="1554782279159" expanded="true" signature="11766:12007" ph="..." />
           </folding>
         </state>
@@ -633,14 +664,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/remain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="100" column="13" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
+        <state relative-caret-position="88">
+          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#1837#1921#0" />
-            <element signature="e#1956#2928#0" />
-            <element signature="e#2964#3533#0" />
-            <marker date="1554782279103" expanded="true" signature="247:3960" ph="..." />
+            <element signature="e#2661#3059#0" />
+            <element signature="e#3103#3739#0" />
+            <element signature="e#4101#4820#0" />
+            <element signature="e#4751#4755#0" />
+            <element signature="e#4800#5048#0" />
+            <element signature="e#5349#5742#0" />
+            <element signature="e#5835#6410#0" />
+            <element signature="e#6456#7133#0" />
+            <element signature="e#5076#5138#0" />
+            <element signature="e#5193#5274#0" />
+            <element signature="e#2309#3074#0" />
+            <element signature="e#3115#3490#0" />
+            <element signature="e#3548#3582#0" />
+            <element signature="e#3641#3956#0" />
+            <element signature="e#9167#9545#0" />
+            <element signature="e#4340#4424#0" />
+            <element signature="e#4459#5431#0" />
+            <element signature="e#5467#6036#0" />
+            <marker date="1554807798222" expanded="true" signature="247:9525" ph="..." />
+            <marker date="1554807798222" expanded="true" signature="1402:1796" ph="..." />
+            <marker date="1554807798222" expanded="true" signature="5410:7445" ph="..." />
           </folding>
         </state>
       </provider>
