@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="widget" native="true">
+   <widget class="QWidget" name="widget_left_top" native="true">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -23,7 +23,7 @@
       <height>131</height>
      </rect>
     </property>
-    <widget class="QLabel" name="label_7">
+    <widget class="QLabel" name="label_welcome">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -37,7 +37,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="widget_2" native="true">
+   <widget class="QWidget" name="widget_left_bottom" native="true">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -46,7 +46,7 @@
       <height>531</height>
      </rect>
     </property>
-    <widget class="QGroupBox" name="groupBox">
+    <widget class="QGroupBox" name="groupBox_func">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -58,7 +58,7 @@
      <property name="title">
       <string>功能</string>
      </property>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_face_dect">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -71,7 +71,7 @@
        <string>人脸检测</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btn_face_reco">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -84,7 +84,7 @@
        <string>人脸识别</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_12">
+     <widget class="QPushButton" name="btn_face_anal">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -98,7 +98,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="groupBox_2">
+    <widget class="QGroupBox" name="groupBox_data">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -110,7 +110,7 @@
      <property name="title">
       <string>数据</string>
      </property>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="btn_data_list">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -123,7 +123,7 @@
        <string>数据列表</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="btn_data_anal">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -137,7 +137,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="groupBox_3">
+    <widget class="QGroupBox" name="groupBox_set">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -149,7 +149,7 @@
      <property name="title">
       <string>设置</string>
      </property>
-     <widget class="QPushButton" name="pushButton_10">
+     <widget class="QPushButton" name="btn_start_set">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -162,7 +162,7 @@
        <string>启动设置</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_11">
+     <widget class="QPushButton" name="btn_data_set">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -177,7 +177,7 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QWidget" name="widget_3" native="true">
+   <widget class="QWidget" name="widget_right_bar" native="true">
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -186,7 +186,7 @@
       <height>661</height>
      </rect>
     </property>
-    <widget class="QWidget" name="widget_4" native="true">
+    <widget class="QWidget" name="widget_people_show" native="true">
      <property name="geometry">
       <rect>
        <x>610</x>
@@ -195,16 +195,16 @@
        <height>661</height>
       </rect>
      </property>
-     <widget class="QWidget" name="widget_6" native="true">
+     <widget class="QWidget" name="widget_person_1" native="true">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>30</x>
         <y>110</y>
         <width>221</width>
         <height>131</height>
        </rect>
       </property>
-      <widget class="QLabel" name="label_4">
+      <widget class="QLabel" name="label_img_show_1">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -217,10 +217,10 @@
         <string>Person_img_1</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_5">
+      <widget class="QLabel" name="label_img_info_1">
        <property name="geometry">
         <rect>
-         <x>30</x>
+         <x>40</x>
          <y>90</y>
          <width>121</width>
          <height>31</height>
@@ -231,16 +231,16 @@
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="widget_9" native="true">
+     <widget class="QWidget" name="widget_person_2" native="true">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>30</x>
         <y>240</y>
         <width>221</width>
-        <height>121</height>
+        <height>131</height>
        </rect>
       </property>
-      <widget class="QLabel" name="label_10">
+      <widget class="QLabel" name="label_img_show_2">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -253,11 +253,11 @@
         <string>Person_img_2</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_11">
+      <widget class="QLabel" name="label_img_info_2">
        <property name="geometry">
         <rect>
          <x>40</x>
-         <y>80</y>
+         <y>90</y>
          <width>121</width>
          <height>31</height>
         </rect>
@@ -267,19 +267,19 @@
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="widget_8" native="true">
+     <widget class="QWidget" name="widget_person_3" native="true">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>360</y>
+        <x>30</x>
+        <y>370</y>
         <width>221</width>
         <height>131</height>
        </rect>
       </property>
-      <widget class="QLabel" name="label_8">
+      <widget class="QLabel" name="label_img_show_3">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>20</x>
          <y>10</y>
          <width>191</width>
          <height>61</height>
@@ -289,11 +289,11 @@
         <string>Person_img_3</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_9">
+      <widget class="QLabel" name="label_img_info_3">
        <property name="geometry">
         <rect>
          <x>40</x>
-         <y>80</y>
+         <y>90</y>
          <width>121</width>
          <height>31</height>
         </rect>
@@ -303,19 +303,19 @@
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="widget_7" native="true">
+     <widget class="QWidget" name="widget_person_4" native="true">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>490</y>
+        <x>30</x>
+        <y>500</y>
         <width>221</width>
         <height>131</height>
        </rect>
       </property>
-      <widget class="QLabel" name="label_12">
+      <widget class="QLabel" name="label_img_show_4">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>20</x>
          <y>10</y>
          <width>191</width>
          <height>61</height>
@@ -325,11 +325,11 @@
         <string>Person_img_4</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_13">
+      <widget class="QLabel" name="label_img_info_4">
        <property name="geometry">
         <rect>
          <x>40</x>
-         <y>80</y>
+         <y>90</y>
          <width>121</width>
          <height>31</height>
         </rect>
@@ -339,7 +339,7 @@
        </property>
       </widget>
      </widget>
-     <widget class="QLabel" name="label_15">
+     <widget class="QLabel" name="label_info_show">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -353,7 +353,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="label_video">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -366,7 +366,7 @@
       <string>Video </string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="btn_select_algo">
      <property name="geometry">
       <rect>
        <x>180</x>
@@ -379,7 +379,7 @@
       <string>选择算法</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="btn_select_class">
      <property name="geometry">
       <rect>
        <x>180</x>
@@ -392,7 +392,7 @@
       <string>选择分类器</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_7">
+    <widget class="QPushButton" name="btn_open_video">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -405,7 +405,7 @@
       <string>打开视频</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_8">
+    <widget class="QPushButton" name="btn_open_camera">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -418,7 +418,7 @@
       <string>打开摄像头</string>
      </property>
     </widget>
-    <widget class="QWidget" name="widget_5" native="true">
+    <widget class="QWidget" name="widget_algo_data" native="true">
      <property name="geometry">
       <rect>
        <x>340</x>
@@ -427,7 +427,7 @@
        <height>181</height>
       </rect>
      </property>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="label_algo_data">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -440,7 +440,7 @@
        <string>算法数据</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="label_model_pos">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -453,7 +453,7 @@
        <string>模型</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="label_accuracy_pos">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -466,7 +466,7 @@
        <string>准确率</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_14">
+     <widget class="QLabel" name="label_class_pos">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -480,7 +480,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QPushButton" name="pushButton_9">
+    <widget class="QPushButton" name="btn_save_img">
      <property name="geometry">
       <rect>
        <x>10</x>

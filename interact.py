@@ -109,8 +109,7 @@ class MainUI(QWidget):
                 img = face_recognition.load_image_file(root_dir + "/" + name + "/" + file)
                 temp = face_recognition.face_encodings(img)
                 if len(temp) == 0:
-                    print(img.shape)
-                    print(name)
+                    print("face encoding is not exist, img error, exit.")
                     sys.exit(0)
                 encoding = temp[0]
                 encodings.append(encoding)
