@@ -6,7 +6,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from deep.dnn import DeepFace
-from second import Ui_MainWindow
+from second_ui import Ui_MainWindow
 
 
 class MyWindow(QMainWindow, Ui_MainWindow):
@@ -26,20 +26,68 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.thd = None
         self.pool = QThreadPool.globalInstance()
         self.img_state = False
+        self.face_detect_state = False
         self.img_url = "source/images/"
         self.infos = ["KNeighborsClassifier", "DecisionTreeClassifier", "RandomForestClassifier", "LinearSVC"]
         self.harr_filepath = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
         self.classifier = cv2.CascadeClassifier(self.harr_filepath)  # 加载人脸特征分类器
 
-        self.load_known(self.img_url)
-        self.worker.pre_train(self.img_url)
+        # self.load_known(self.img_url)
+        # self.worker.pre_train(self.img_url)
 
         self.set_ui(self)
+
+        self.offset = 0
+        self.idx = 5
         self.set_data()
         self.set_slot()
         self.setWindowTitle("FaceSystem")
         self.setWindowIcon(QIcon("./source/logos/apple.png"))
+        self.qss = self.read_qss('./source/stylesheet/main.qss')
+        self.setStyleSheet(self.qss)
         self.show()
+
+    @staticmethod
+    def read_qss(style):
+        with open(style, 'r') as f:
+            return f.read()
+
+    def show_data(self, url, offset, idx):
+        if url is None:
+            return
+        print("into show data")
+        count = -1
+        for name in os.listdir(url):
+            count = count + 1
+            if count < offset:
+                continue
+            if count >= offset + idx:
+                break
+            row = count - offset + 1
+
+            item = QTableWidgetItem()
+            item.setText(name)
+            self.database_show.setItem(row, 0, item)
+            print("person name is :" + name)
+            sum = 0
+            img_path = "./source/otherImg/people.jpg"
+            print("person image url is: " + img_path)
+            for file in os.listdir(os.path.join(url, name)):
+                img_path = url + "/" + name + "/" + file
+                sum = sum + 1
+            item = QTableWidgetItem()
+            item.setText(str(sum))
+            self.database_show.setItem(row, 1, item)
+
+            item = QTableWidgetItem()
+            item.setText("2019.4.10")
+            self.database_show.setItem(row, 2, item)
+
+            item = QLabel("")
+            item.setAlignment(Qt.AlignCenter)
+            item.setPixmap(QPixmap(img_path).scaled(60, 60))
+            self.database_show.setCellWidget(row, 3, item)
+        print(" the res of count is :" + str(count))
 
     def set_data(self):
         self.img_infos = [self.label_img_info_1, self.label_img_info_2, self.label_img_info_3, self.label_img_info_4]
@@ -47,12 +95,15 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         for item in self.img_shows:
             item.setFixedSize(191, 61)
             item.setScaledContents(True)
+
         print("set labels done...")
+        self.show_data(self.img_url, self.offset, self.idx)
+        print("show data done...")
 
     def set_slot(self):
         self.time_camera.timeout.connect(self.show_camera)
         self.time_video.timeout.connect(self.show_video)
-        self.time_flash.timeout.connect(self.start_face)
+        self.time_flash.timeout.connect(self.show_face)
 
         self.btn_face_dect.clicked.connect(self.face_detect)
         self.btn_face_reco.clicked.connect(self.face_reco)
@@ -71,17 +122,37 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.btn_select_algo.clicked.connect(self.select_model)
         self.btn_select_class.clicked.connect(self.select_classifier)
 
+        self.btn_left_page.clicked.connect(self.turn_left_page)
+        self.btn_right_page.clicked.connect(self.turn_right_page)
+
         print("set slots done...")
+
+    def turn_left_page(self):
+        print("Into turn left page")
+        if self.offset < self.idx:
+            print("at first page")
+        else:
+            self.offset = self.offset - self.idx
+            self.show_data(self.img_url, self.offset, self.idx)
+            print("flush page")
+
+    def turn_right_page(self):
+        print("Into turn right page")
+        self.offset = self.offset + self.idx
+        self.show_data(self.img_url, self.offset, self.idx)
+        print("flush page")
 
     def show_camera(self):
         ret, self.frame = self.cap.read()
         show = cv2.resize(self.frame, (512, 384))
         show = cv2.cvtColor(show, cv2.COLOR_BGR2RGB)
-        # opencv 读取图片的样式，不能通过Qlabel进行显示，需要转换为Qimage QImage(uchar * data, int width,
-        gray_image = cv2.cvtColor(show, cv2.COLOR_BGR2GRAY)
-        faces = self.classifier.detectMultiScale(gray_image, 1.3, 5)  # 1.3和5是特征的最小、最大检测窗口，它改变检测结果也会改变
-        for (x, y, w, h) in faces:
-            cv2.rectangle(show, (x, y), (x + w, y + h), (0, 255, 0), 2)  # 画出人脸
+        if self.face_detect_state:
+            # opencv 读取图片的样式，不能通过Qlabel进行显示，需要转换为Qimage QImage(uchar * data, int width,
+            # 1.3和5是特征的最小、最大检测窗口，它改变检测结果也会改变
+            gray_image = cv2.cvtColor(show, cv2.COLOR_BGR2GRAY)
+            faces = self.classifier.detectMultiScale(gray_image, 1.3, 5)
+            for (x, y, w, h) in faces:
+                cv2.rectangle(show, (x, y), (x + w, y + h), (0, 255, 0), 2)  # 画出人脸
         self.showImage = QImage(show.data, show.shape[1], show.shape[0], QImage.Format_RGB888)
         self.label_video.setPixmap(QPixmap.fromImage(self.showImage))
 
@@ -91,23 +162,27 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             self.close_video()
         show = cv2.resize(self.frame, (512, 384))
         show = cv2.cvtColor(show, cv2.COLOR_BGR2RGB)
-        # opencv 读取图片的样式，不能通过Qlabel进行显示，需要转换为Qimage QImage(uchar * data, int width,
-        gray_image = cv2.cvtColor(show, cv2.COLOR_BGR2GRAY)
-        faces = self.classifier.detectMultiScale(gray_image, 1.3, 5)  # 1.3和5是特征的最小、最大检测窗口，它改变检测结果也会改变
-        for (x, y, w, h) in faces:
-            cv2.rectangle(show, (x, y), (x + w, y + h), (0, 255, 0), 2)  # 画出人脸
+        if self.face_detect_state:
+            # opencv 读取图片的样式，不能通过Qlabel进行显示，需要转换为Qimage QImage(uchar * data, int width,
+            gray_image = cv2.cvtColor(show, cv2.COLOR_BGR2GRAY)
+            # 1.3和5是特征的最小、最大检测窗口，它改变检测结果也会改变
+            faces = self.classifier.detectMultiScale(gray_image, 1.3, 5)
+            for (x, y, w, h) in faces:
+                cv2.rectangle(show, (x, y), (x + w, y + h), (0, 255, 0), 2)  # 画出人脸
         self.showImage = QImage(show.data, show.shape[1], show.shape[0], QImage.Format_RGB888)
         self.label_video.setPixmap(QPixmap.fromImage(self.showImage))
 
-    def start_face(self):
+    def show_face(self):
         if self.frame is not None:
             if self.model == "Inception":
+                # single
                 self.thd = FaceThread()
                 self.thd.set_img(self.frame)
                 self.thd.set_worker(self.worker)
                 self.thd.set_classifier(self.class_method)
                 self.thd.helper.signal.connect(self.set_names)
             else:
+                # multi
                 self.thd = ResThread()
                 self.thd.set_img(self.frame)
                 self.thd.set_dict(self.known_names, self.known_encodings)
@@ -115,31 +190,34 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             self.pool.start(self.thd)
 
     def face_detect(self):
-        # use a state to control whether draw box of person or not.
-        pass
+        self.stackedWidget.setCurrentIndex(0)
+        self.face_detect_state = not self.face_detect_state
 
     def face_reco(self):
+        self.stackedWidget.setCurrentIndex(0)
         if self.time_flash.isActive() is False:
             self.time_flash.start(2000)
             self.btn_face_reco.setText(u"关闭人脸识别")
         else:
             self.time_flash.stop()
-            self.btn_face_reco.setText(u"打开人脸识别")
+            self.btn_face_reco.setText(u"人脸识别")
 
     def face_analysis(self):
+        self.stackedWidget.setCurrentIndex(3)
         pass
 
     def data_anal(self):
+        self.stackedWidget.setCurrentIndex(1)
         pass
 
     def data_list(self):
-        pass
+        self.stackedWidget.setCurrentIndex(1)
 
     def start_set(self):
-        pass
+        self.stackedWidget.setCurrentIndex(2)
 
     def data_set(self):
-        pass
+        self.stackedWidget.setCurrentIndex(1)
 
     def open_camera(self):
         if self.time_camera.isActive() is False:
@@ -184,13 +262,15 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.time_video.start(30)
         self.time_camera.start(30)
 
-    def select_model(self, model):
+    def select_model(self):
+        model = None
         self.model = model
-        print("Change model to : " + model)
+        print("Change model to : ")
 
-    def select_classifier(self, classifier):
+    def select_classifier(self):
+        classifier = None
         self.class_method = classifier
-        print("Select classifier : " + classifier)
+        print("Select classifier : ")
 
     def load_known(self, root_dir):
         if root_dir is None:
@@ -209,9 +289,9 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                 encoding = temp[0]
                 encodings.append(encoding)
                 break
+        print("Known data are loaded (for resNet)...")
         self.known_names = names
         self.known_encodings = encodings
-        print("Known data are loaded (for resNet)...")
 
     def set_names(self, data):
         names = list(filter(lambda x: x != '', data.split(",")))
@@ -267,6 +347,12 @@ class Assistant(QObject):
         self.signal.emit(str(res))
 
 
+class PreTrainThread(QRunnable):
+    def __init__(self):
+        super(PreTrainThread, self).__init__()
+        self
+
+
 class ResThread(QRunnable):
     def __init__(self):
         super(ResThread, self).__init__()
@@ -319,3 +405,14 @@ class FaceThread(QRunnable):
         self.worker.train(self.classifier)
         res = self.worker.predict(self.img)
         self.helper.run(res)
+
+
+'''
+    加载数据与模型用其他线程， error， 其他线程加载错误。
+    CSS 界面，
+    4人检测，
+    数据库展示,Widget
+    
+    # 界面切换，使用stack进行顶部切换即可，， UI继续优化
+
+'''

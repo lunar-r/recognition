@@ -2,9 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcc6b798-3a20-42d8-83d4-5ab623ff361e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deep/dnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/deep/dnn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/errors.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interact.py" beforeDir="false" afterPath="$PROJECT_DIR$/element.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/primary.ui" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/remain.py" beforeDir="false" afterPath="$PROJECT_DIR$/remain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/second.py" beforeDir="false" afterPath="$PROJECT_DIR$/second.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/second.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/second.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Rowing.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Ternate.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/face_analysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/get_person.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/get_person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/init.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/main_ui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/one.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/rename_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/people.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/start.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/testUI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ui_test.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,146 +32,120 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/face_system$second.coverage" NAME="second Coverage Results" MODIFIED="1554777215658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/face_system$pytest_in_test_thread_py.coverage" NAME="pytest in test_thread.py Coverage Results" MODIFIED="1554890575521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/face_system$main.coverage" NAME="main Coverage Results" MODIFIED="1554012445873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/face_system$multi.coverage" NAME="multi Coverage Results" MODIFIED="1554946463409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/face_system$second_ui.coverage" NAME="second_ui Coverage Results" MODIFIED="1554953667007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/face_system$get_person.coverage" NAME="get_person Coverage Results" MODIFIED="1554707277740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/face_system$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1554295744277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/face_system$interact.coverage" NAME="interact Coverage Results" MODIFIED="1554710030679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/face_system$try_thread.coverage" NAME="try_thread Coverage Results" MODIFIED="1554901702809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/face_system$start.coverage" NAME="start Coverage Results" MODIFIED="1554778331378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$dnn.coverage" NAME="dnn Coverage Results" MODIFIED="1554013685518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/deep" />
+    <SUITE FILE_PATH="coverage/face_system$ui_test.coverage" NAME="ui_test Coverage Results" MODIFIED="1554776996770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/face_system$grammar_t.coverage" NAME="grammar_t Coverage Results" MODIFIED="1554970459286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/face_system$pytest_in_test_grammer_py.coverage" NAME="pytest in test_grammer.py Coverage Results" MODIFIED="1554968943078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/face_system$second.coverage" NAME="second Coverage Results" MODIFIED="1554777215658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/face_system$thread_try.coverage" NAME="thread_try Coverage Results" MODIFIED="1554892138007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/face_system$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1554295744277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/face_system$interact.coverage" NAME="interact Coverage Results" MODIFIED="1554891553452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/face_system$one.coverage" NAME="one Coverage Results" MODIFIED="1554344632891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1554346986764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/face_system$ui_test.coverage" NAME="ui_test Coverage Results" MODIFIED="1554776996770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/face_system$remain.coverage" NAME="remain Coverage Results" MODIFIED="1554807798295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/face_system$testUI.coverage" NAME="testUI Coverage Results" MODIFIED="1554948833495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/face_system$remain.coverage" NAME="remain Coverage Results" MODIFIED="1554975225559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-2040295204">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="21" />
+          <entry key="project.closed" value="24" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.20" value="5" />
-          <entry key="project.open.time.21" value="2" />
+          <entry key="project.open.time.20" value="6" />
+          <entry key="project.open.time.21" value="3" />
           <entry key="project.open.time.22" value="2" />
+          <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.25" value="1" />
-          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.26" value="2" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="gitignore" value="1" />
           <entry key="html" value="1" />
-          <entry key="jpg" value="14" />
-          <entry key="png" value="2" />
-          <entry key="py" value="62" />
+          <entry key="jpg" value="17" />
+          <entry key="png" value="7" />
+          <entry key="py" value="122" />
+          <entry key="qss" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CSS" value="4" />
           <entry key="HTML" value="1" />
-          <entry key="Image" value="16" />
-          <entry key="Python" value="62" />
+          <entry key="Image" value="24" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="122" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="21" />
-          <entry key="py" value="7914" />
+          <entry key="dummy" value="54" />
+          <entry key="gitignore" value="26" />
+          <entry key="py" value="10932" />
+          <entry key="qss" value="427" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="21" />
-          <entry key="Python" value="7914" />
+          <entry key="CSS" value="427" />
+          <entry key="PLAIN_TEXT" value="80" />
+          <entry key="Python" value="10932" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/interact.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="339" column="22" selection-start-line="339" selection-start-column="13" selection-end-line="339" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#201#285#0" />
-                <element signature="e#320#1292#0" />
-                <element signature="e#1328#1897#0" />
-                <element signature="e#1955#2330#0" />
-                <element signature="e#2365#2898#0" />
-                <marker date="1554782279159" expanded="true" signature="11766:12007" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/remain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+            <state relative-caret-position="134">
+              <caret line="131" column="34" lean-forward="true" selection-start-line="131" selection-start-column="34" selection-end-line="131" selection-end-column="34" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#2661#3059#0" />
-                <element signature="e#3103#3739#0" />
-                <element signature="e#4101#4820#0" />
-                <element signature="e#4751#4755#0" />
-                <element signature="e#4800#5048#0" />
-                <element signature="e#5349#5742#0" />
-                <element signature="e#5835#6410#0" />
-                <element signature="e#6456#7133#0" />
-                <element signature="e#5076#5138#0" />
-                <element signature="e#5193#5274#0" />
-                <element signature="e#2309#3074#0" />
-                <element signature="e#3115#3490#0" />
-                <element signature="e#3548#3582#0" />
-                <element signature="e#3641#3956#0" />
-                <element signature="e#9167#9545#0" />
-                <element signature="e#4340#4424#0" />
-                <element signature="e#4459#5431#0" />
-                <element signature="e#5467#6036#0" />
-                <marker date="1554807798222" expanded="true" signature="247:9525" ph="..." />
-                <marker date="1554807798222" expanded="true" signature="1402:1796" ph="..." />
-                <marker date="1554807798222" expanded="true" signature="5410:7445" ph="..." />
+                <marker date="1554975225480" expanded="true" signature="250:12308" ph="..." />
+                <marker date="1554975225480" expanded="true" signature="2988:2993" ph="..." />
+                <marker date="1554975225480" expanded="true" signature="3012:3502" ph="..." />
+                <marker date="1554975225480" expanded="true" signature="4964:5103" ph="..." />
+                <marker date="1554975225480" expanded="true" signature="8199:10228" ph="..." />
+                <marker date="1554975225480" expanded="true" signature="12565:12652" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/main_ui.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/second.py">
+        <entry file="file://$PROJECT_DIR$/utils/grammar_t.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="101" column="24" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="24" />
+            <state relative-caret-position="260">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/start.py">
+        <entry file="file://$PROJECT_DIR$/second_ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <marker date="1554778467588" expanded="true" signature="13:18" ph="..." />
-                <marker date="1554778467588" expanded="true" signature="176:181" ph="..." />
-              </folding>
+            <state relative-caret-position="343">
+              <caret line="195" column="69" lean-forward="true" selection-start-line="195" selection-start-column="69" selection-end-line="195" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -168,36 +161,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>start</find>
-      <find>2000</find>
-      <find>thread</find>
-      <find>setWorker</find>
-      <find>setClassifier</find>
-      <find>show_work</find>
-      <find>thd</find>
-      <find>initData</find>
-      <find>initUI</find>
-      <find>initSlot</find>
-      <find>print_msg</find>
-      <find>self.classifier</find>
-      <find>classifier</find>
-      <find>worker.tr</find>
-      <find>self</find>
-      <find>unknown</find>
-      <find>Unknown</find>
-      <find>clos</find>
-      <find>close</find>
-      <find>self.newdata</find>
       <find>train_idx</find>
       <find>pre_train</find>
       <find>retranslateUi</find>
       <find>name_infos</find>
-      <find>img_url</find>
       <find>label_img</find>
       <find>show_camera</find>
       <find>count</find>
-      <find>label_video</find>
       <find>showImage</find>
+      <find>label_video</find>
+      <find>start_face</find>
+      <find>DeepFace</find>
+      <find>btn_event</find>
+      <find>img_url</find>
+      <find>class_method</find>
+      <find>Deep</find>
+      <find>worker</find>
+      <find>button</find>
+      <find>img_</find>
+      <find>Video</find>
+      <find>group</find>
+      <find>data_list</find>
+      <find>cente</find>
+      <find>stack</find>
+      <find>stackedWidget</find>
+      <find>Liming</find>
+      <find>table</find>
+      <find>QIc</find>
+      <find>person</find>
+      <find>tableW</find>
+      <find>database_show</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -209,14 +202,25 @@
         <option value="$PROJECT_DIR$/init.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/tests/main.py" />
-        <option value="$PROJECT_DIR$/deep/dnn.py" />
         <option value="$PROJECT_DIR$/tests/get_person.py" />
         <option value="$PROJECT_DIR$/tests/one.py" />
         <option value="$PROJECT_DIR$/tests/face_analysis.py" />
         <option value="$PROJECT_DIR$/tests/start.py" />
+        <option value="$PROJECT_DIR$/tests/ui_test.py" />
+        <option value="$PROJECT_DIR$/deep/dnn.py" />
+        <option value="$PROJECT_DIR$/thread_try.py" />
         <option value="$PROJECT_DIR$/interact.py" />
+        <option value="$PROJECT_DIR$/test_thread.py" />
+        <option value="$PROJECT_DIR$/try_thread.py" />
         <option value="$PROJECT_DIR$/second.py" />
+        <option value="$PROJECT_DIR$/source/stylesheet/main.qss" />
+        <option value="$PROJECT_DIR$/data.py" />
+        <option value="$PROJECT_DIR$/tests/multi.py" />
+        <option value="$PROJECT_DIR$/utils/test_grammer.py" />
+        <option value="$PROJECT_DIR$/utils/grammar_t.py" />
+        <option value="$PROJECT_DIR$/second_ui.py" />
         <option value="$PROJECT_DIR$/remain.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -226,7 +230,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7" fullScreen="true">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -238,7 +242,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -246,26 +249,11 @@
               <item name="face_system" type="b2602c69:ProjectViewProjectNode" />
               <item name="face_system" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="face_system" type="b2602c69:ProjectViewProjectNode" />
-              <item name="face_system" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="face_system" type="b2602c69:ProjectViewProjectNode" />
-              <item name="face_system" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="logos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="face_system" type="b2602c69:ProjectViewProjectNode" />
-              <item name="face_system" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -273,18 +261,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../face_recognition" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\UserInfo\workDir\face\face_system\tests" />
-      <recent name="D:\UserInfo\workDir\face\face_system\source\video" />
-      <recent name="D:\UserInfo\workDir\face\face_system" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UserInfo\workDir\face\face_system\source\ui" />
+      <recent name="D:\UserInfo\workDir\face\face_system" />
       <recent name="D:\UserInfo\workDir\face\face_system\tests" />
       <recent name="D:\UserInfo\workDir\face\face_system\source\images" />
       <recent name="D:\UserInfo\workDir\face\face_system\source" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UserInfo\workDir\face\face_system\tests" />
+      <recent name="D:\UserInfo\workDir\face\face_system\source\video" />
       <recent name="D:\UserInfo\workDir\face\face_system" />
     </key>
   </component>
@@ -301,7 +290,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.remain">
-    <configuration name="interact" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="grammar_t" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="face_system" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -309,12 +298,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/interact.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/grammar_t.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -345,7 +334,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="second" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="second_ui" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="face_system" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -358,7 +347,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/second.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/second_ui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -367,7 +356,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="start" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="testUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="face_system" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -380,7 +369,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/start.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/testUI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -389,42 +378,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ui_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="pytest in test_grammer.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="face_system" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/ui_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/utils/test_grammer.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.interact" />
       <item itemvalue="Python.remain" />
-      <item itemvalue="Python.ui_test" />
-      <item itemvalue="Python.second" />
-      <item itemvalue="Python.start" />
+      <item itemvalue="Python.testUI" />
+      <item itemvalue="Python.second_ui" />
+      <item itemvalue="Python tests.pytest in test_grammer.py" />
+      <item itemvalue="Python.grammar_t" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.remain" />
-        <item itemvalue="Python.start" />
-        <item itemvalue="Python.second" />
-        <item itemvalue="Python.ui_test" />
-        <item itemvalue="Python.interact" />
+        <item itemvalue="Python.grammar_t" />
+        <item itemvalue="Python tests.pytest in test_grammer.py" />
+        <item itemvalue="Python.second_ui" />
+        <item itemvalue="Python.testUI" />
       </list>
     </recent_temporary>
   </component>
@@ -441,15 +424,24 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="pytest_in_test_thread_py - 2019.04.10 at 18h 03m 07s.xml">
+      <configuration name="pytest in test_thread.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_grammer_py - 2019.04.11 at 15h 49m 05s.xml">
+      <configuration name="pytest in test_grammer.py" configurationId="tests" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <frame x="0" y="0" width="1536" height="864" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3266399" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33935744" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32991013" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27727857" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27599487" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3992298" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -496,10 +488,16 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="database_show" />
+        <watch expression="self.database_show" />
+        <watch expression="item" />
+      </configuration>
+    </watches-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html" />
-    <entry file="file://$PROJECT_DIR$/testWEB.py" />
-    <entry file="file://$PROJECT_DIR$/tests/worker.py" />
     <entry file="file://$PROJECT_DIR$/source/logos/xg.jpg" />
     <entry file="file://$PROJECT_DIR$/source/logos/Joanne2.jpg" />
     <entry file="file://$PROJECT_DIR$/source/logos/Joanne.jpg" />
@@ -511,13 +509,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/images/Jacques_Chirac/Jacques_Chirac_0001.jpg" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/keras/engine/training.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="1141" selection-start-line="1141" selection-end-line="1141" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/sklearn/neighbors/classification.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -545,20 +536,6 @@
     <entry file="file://$PROJECT_DIR$/source/images/Hugo_Chavez/Hugo_Chavez_0002.jpg" />
     <entry file="file://$PROJECT_DIR$/source/images/Hugo_Chavez/Hugo_Chavez_0003.jpg" />
     <entry file="file://$PROJECT_DIR$/source/images/Hugo_Chavez/Hugo_Chavez_0005.jpg" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/numpy/lib/shape_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="572" selection-start-line="572" selection-end-line="572" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deep/align.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1382">
-          <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/tensorflow/python/client/session.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -566,129 +543,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deep/dnn.py">
+    <entry file="file://$PROJECT_DIR$/tests/people.jpg" />
+    <entry file="file://$PROJECT_DIR$/utils/get_person.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="86" column="51" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/one.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/face_analysis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/get_person.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
+        <state relative-caret-position="684">
           <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/testUI.py">
+    <entry file="file://$PROJECT_DIR$/utils/rename_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deep/align.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_bundle/pydev_monkey_qt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="192" selection-start-line="192" selection-end-line="192" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/keras/engine/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="1141" selection-start-line="1141" selection-end-line="1141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/numpy/lib/shape_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="572" selection-start-line="572" selection-end-line="572" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deep/dnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="77" column="47" lean-forward="true" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread_try.py" />
+    <entry file="file://$PROJECT_DIR$/test_thread.py" />
+    <entry file="file://$PROJECT_DIR$/errors.jpg" />
+    <entry file="file://$PROJECT_DIR$/tests/python_2019-04-10_21-20-26.png" />
+    <entry file="file://$PROJECT_DIR$/tests/main_ui.png" />
+    <entry file="file://$PROJECT_DIR$/second.py" />
+    <entry file="file://$PROJECT_DIR$/source/stylesheet/main.qss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.py" />
+    <entry file="file://$PROJECT_DIR$/try_thread.py" />
+    <entry file="file://$PROJECT_DIR$/tests/face_analysis.py" />
+    <entry file="file://$PROJECT_DIR$/tests/init.py" />
+    <entry file="file://$PROJECT_DIR$/tests/multi.py" />
+    <entry file="file://$PROJECT_DIR$/tests/start.py" />
+    <entry file="file://$PROJECT_DIR$/tests/Ternate.py" />
+    <entry file="file://$PROJECT_DIR$/tests/testUI.py" />
+    <entry file="file://$PROJECT_DIR$/utils/stack_widget_show.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
-          <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+          <caret line="105" column="30" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Ternate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/people.jpg">
+    <entry file="file://$PROJECT_DIR$/source/otherImg/main_ui.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/ui_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1976">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/init.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/main_ui.png">
+    <entry file="file://$PROJECT_DIR$/source/otherImg/python_2019-04-10_21-20-26.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/start.py">
+    <entry file="file://$PROJECT_DIR$/source/otherImg/Rowing.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/otherImg/people.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/test_grammer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <marker date="1554778467588" expanded="true" signature="13:18" ph="..." />
-            <marker date="1554778467588" expanded="true" signature="176:181" ph="..." />
-          </folding>
+        <state relative-caret-position="26">
+          <caret line="1" column="12" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/second.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="101" column="24" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="24" />
+        <state relative-caret-position="6764">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interact.py">
+    <entry file="file://$PROJECT_DIR$/utils/grammar_t.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="339" column="22" selection-start-line="339" selection-start-column="13" selection-end-line="339" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#201#285#0" />
-            <element signature="e#320#1292#0" />
-            <element signature="e#1328#1897#0" />
-            <element signature="e#1955#2330#0" />
-            <element signature="e#2365#2898#0" />
-            <marker date="1554782279159" expanded="true" signature="11766:12007" ph="..." />
-          </folding>
+        <state relative-caret-position="260">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="195" column="69" lean-forward="true" selection-start-line="195" selection-start-column="69" selection-end-line="195" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/element.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2340">
+          <caret line="97" column="27" lean-forward="true" selection-start-line="97" selection-start-column="27" selection-end-line="97" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/remain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+        <state relative-caret-position="134">
+          <caret line="131" column="34" lean-forward="true" selection-start-line="131" selection-start-column="34" selection-end-line="131" selection-end-column="34" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#2661#3059#0" />
-            <element signature="e#3103#3739#0" />
-            <element signature="e#4101#4820#0" />
-            <element signature="e#4751#4755#0" />
-            <element signature="e#4800#5048#0" />
-            <element signature="e#5349#5742#0" />
-            <element signature="e#5835#6410#0" />
-            <element signature="e#6456#7133#0" />
-            <element signature="e#5076#5138#0" />
-            <element signature="e#5193#5274#0" />
-            <element signature="e#2309#3074#0" />
-            <element signature="e#3115#3490#0" />
-            <element signature="e#3548#3582#0" />
-            <element signature="e#3641#3956#0" />
-            <element signature="e#9167#9545#0" />
-            <element signature="e#4340#4424#0" />
-            <element signature="e#4459#5431#0" />
-            <element signature="e#5467#6036#0" />
-            <marker date="1554807798222" expanded="true" signature="247:9525" ph="..." />
-            <marker date="1554807798222" expanded="true" signature="1402:1796" ph="..." />
-            <marker date="1554807798222" expanded="true" signature="5410:7445" ph="..." />
+            <marker date="1554975225480" expanded="true" signature="250:12308" ph="..." />
+            <marker date="1554975225480" expanded="true" signature="2988:2993" ph="..." />
+            <marker date="1554975225480" expanded="true" signature="3012:3502" ph="..." />
+            <marker date="1554975225480" expanded="true" signature="4964:5103" ph="..." />
+            <marker date="1554975225480" expanded="true" signature="8199:10228" ph="..." />
+            <marker date="1554975225480" expanded="true" signature="12565:12652" ph="..." />
           </folding>
         </state>
       </provider>

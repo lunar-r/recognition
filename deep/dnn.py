@@ -54,6 +54,7 @@ def load_metadata(path):
                 metadata.append(IdentityMetadata(path, i, f))
     return np.array(metadata)
 
+
 class DeepFace:
     def __init__(self):
         self.pre_model = create_model()
@@ -110,6 +111,7 @@ class DeepFace:
 
         print("the result of recognition: " + str(example_identity))
         return str(example_identity)
+
 
 def main(argv=None):
     work = DeepFace()
