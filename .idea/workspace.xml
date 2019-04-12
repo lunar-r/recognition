@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcc6b798-3a20-42d8-83d4-5ab623ff361e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deep/dnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/deep/dnn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/errors.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/interact.py" beforeDir="false" afterPath="$PROJECT_DIR$/element.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/primary.ui" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/remain.py" beforeDir="false" afterPath="$PROJECT_DIR$/remain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/second.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/second.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Rowing.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Ternate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/face_analysis.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/get_person.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/get_person.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/init.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/main_ui.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/one.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/rename_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/people.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/start.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/testUI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ui_test.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,13 +30,13 @@
     <SUITE FILE_PATH="coverage/face_system$one.coverage" NAME="one Coverage Results" MODIFIED="1554344632891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1554346986764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$testUI.coverage" NAME="testUI Coverage Results" MODIFIED="1554948833495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/face_system$remain.coverage" NAME="remain Coverage Results" MODIFIED="1554975225559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/face_system$remain.coverage" NAME="remain Coverage Results" MODIFIED="1555038834803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-2040295204">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="24" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.15" value="1" />
@@ -68,12 +48,12 @@
           <entry key="project.open.time.22" value="2" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.25" value="1" />
-          <entry key="project.open.time.26" value="2" />
+          <entry key="project.open.time.26" value="3" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="26" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -99,7 +79,7 @@
         <counts>
           <entry key="dummy" value="54" />
           <entry key="gitignore" value="26" />
-          <entry key="py" value="10932" />
+          <entry key="py" value="11759" />
           <entry key="qss" value="427" />
         </counts>
       </usages-collector>
@@ -107,7 +87,7 @@
         <counts>
           <entry key="CSS" value="427" />
           <entry key="PLAIN_TEXT" value="80" />
-          <entry key="Python" value="10932" />
+          <entry key="Python" value="11759" />
         </counts>
       </usages-collector>
     </session>
@@ -117,16 +97,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/remain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="131" column="34" lean-forward="true" selection-start-line="131" selection-start-column="34" selection-end-line="131" selection-end-column="34" />
+            <state relative-caret-position="-962">
+              <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1554975225480" expanded="true" signature="250:12308" ph="..." />
-                <marker date="1554975225480" expanded="true" signature="2988:2993" ph="..." />
-                <marker date="1554975225480" expanded="true" signature="3012:3502" ph="..." />
-                <marker date="1554975225480" expanded="true" signature="4964:5103" ph="..." />
-                <marker date="1554975225480" expanded="true" signature="8199:10228" ph="..." />
-                <marker date="1554975225480" expanded="true" signature="12565:12652" ph="..." />
+                <marker date="1555038830600" expanded="true" signature="250:13384" ph="..." />
+                <marker date="1555038830600" expanded="true" signature="2850:2984" ph="..." />
+                <marker date="1555038830600" expanded="true" signature="4395:4400" ph="..." />
+                <marker date="1555038830600" expanded="true" signature="4419:4909" ph="..." />
               </folding>
             </state>
           </provider>
@@ -135,8 +113,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/grammar_t.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="234">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -144,8 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/second_ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="195" column="69" lean-forward="true" selection-start-line="195" selection-start-column="69" selection-end-line="195" selection-end-column="69" />
+            <state relative-caret-position="187">
+              <caret line="282" column="28" selection-start-line="282" selection-start-column="13" selection-end-line="282" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -161,11 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>train_idx</find>
-      <find>pre_train</find>
-      <find>retranslateUi</find>
-      <find>name_infos</find>
-      <find>label_img</find>
       <find>show_camera</find>
       <find>count</find>
       <find>showImage</find>
@@ -191,6 +164,11 @@
       <find>person</find>
       <find>tableW</find>
       <find>database_show</find>
+      <find>label_model</find>
+      <find>select</find>
+      <find>model</find>
+      <find>btn_select</find>
+      <find>save_img</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -219,8 +197,8 @@
         <option value="$PROJECT_DIR$/utils/test_grammer.py" />
         <option value="$PROJECT_DIR$/utils/grammar_t.py" />
         <option value="$PROJECT_DIR$/second_ui.py" />
-        <option value="$PROJECT_DIR$/remain.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/remain.py" />
       </list>
     </option>
   </component>
@@ -230,7 +208,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -242,6 +220,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -253,7 +232,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -433,15 +411,14 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1536" height="864" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33935744" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34404284" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32991013" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27599487" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27599487" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3992298" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -633,13 +610,7 @@
     <entry file="file://$PROJECT_DIR$/source/otherImg/people.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/test_grammer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="12" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/test_grammer.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6764">
@@ -647,24 +618,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/grammar_t.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/ntpath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="74" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/second_ui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="195" column="69" lean-forward="true" selection-start-line="195" selection-start-column="69" selection-end-line="195" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -682,18 +639,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utils/grammar_t.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="282" column="28" selection-start-line="282" selection-start-column="13" selection-end-line="282" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/remain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="131" column="34" lean-forward="true" selection-start-line="131" selection-start-column="34" selection-end-line="131" selection-end-column="34" />
+        <state relative-caret-position="-962">
+          <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1554975225480" expanded="true" signature="250:12308" ph="..." />
-            <marker date="1554975225480" expanded="true" signature="2988:2993" ph="..." />
-            <marker date="1554975225480" expanded="true" signature="3012:3502" ph="..." />
-            <marker date="1554975225480" expanded="true" signature="4964:5103" ph="..." />
-            <marker date="1554975225480" expanded="true" signature="8199:10228" ph="..." />
-            <marker date="1554975225480" expanded="true" signature="12565:12652" ph="..." />
+            <marker date="1555038830600" expanded="true" signature="250:13384" ph="..." />
+            <marker date="1555038830600" expanded="true" signature="2850:2984" ph="..." />
+            <marker date="1555038830600" expanded="true" signature="4395:4400" ph="..." />
+            <marker date="1555038830600" expanded="true" signature="4419:4909" ph="..." />
           </folding>
         </state>
       </provider>

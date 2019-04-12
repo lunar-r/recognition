@@ -32,10 +32,21 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.harr_filepath = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
         self.classifier = cv2.CascadeClassifier(self.harr_filepath)  # 加载人脸特征分类器
 
-        # self.load_known(self.img_url)
-        # self.worker.pre_train(self.img_url)
+        self.load_known(self.img_url)
+        self.worker.pre_train(self.img_url)
 
         self.set_ui(self)
+        menu = QMenu()
+        menu.addAction("Inception", self.select_model_ince)
+        menu.addAction("ResNet", self.select_model_res)
+        self.btn_select_algo.setMenu(menu)
+
+        menu = QMenu()
+        menu.addAction("KNN", self.select_class_knn)
+        menu.addAction("DTree", self.select_class_dtree)
+        menu.addAction("RandomForest", self.select_class_rf)
+        menu.addAction("LinearRegression", self.select_class_lr)
+        self.btn_select_class.setMenu(menu)
 
         self.offset = 0
         self.idx = 5
@@ -46,6 +57,36 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.qss = self.read_qss('./source/stylesheet/main.qss')
         self.setStyleSheet(self.qss)
         self.show()
+
+    def select_model_ince(self):
+        self.model = "Inception"
+        self.label_model_info.setText("Inception")
+        print(self.model)
+
+    def select_model_res(self):
+        self.model = "ResNet"
+        self.label_model_info.setText("ResNet")
+        print(self.model)
+
+    def select_class_knn(self):
+        self.class_method = self.infos[0]
+        self.label_class_info.setText(self.infos[0])
+        print(self.class_method)
+
+    def select_class_dtree(self):
+        self.class_method = self.infos[1]
+        self.label_class_info.setText(self.infos[1])
+        print(self.class_method)
+
+    def select_class_rf(self):
+        self.class_method = self.infos[2]
+        self.label_class_info.setText(self.infos[2])
+        print(self.class_method)
+
+    def select_class_lr(self):
+        self.class_method = self.infos[3]
+        self.label_class_info.setText(self.infos[3])
+        print(self.class_method)
 
     @staticmethod
     def read_qss(style):
@@ -118,9 +159,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.btn_open_camera.clicked.connect(self.open_camera)
         self.btn_open_video.clicked.connect(self.open_video)
         self.btn_save_img.clicked.connect(self.save_img)
-
-        self.btn_select_algo.clicked.connect(self.select_model)
-        self.btn_select_class.clicked.connect(self.select_classifier)
 
         self.btn_left_page.clicked.connect(self.turn_left_page)
         self.btn_right_page.clicked.connect(self.turn_right_page)
@@ -244,6 +282,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             self.close_source("video")
 
     def save_img(self):
+        if self.showImage is None:
+            return
         self.time_camera.stop()
         self.time_video.stop()
         name, state = QInputDialog.getText(self, "人名", "请输入保存者名称", QLineEdit.Normal, "Liming")
@@ -261,16 +301,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.showImage.save(path)
         self.time_video.start(30)
         self.time_camera.start(30)
-
-    def select_model(self):
-        model = None
-        self.model = model
-        print("Change model to : ")
-
-    def select_classifier(self):
-        classifier = None
-        self.class_method = classifier
-        print("Select classifier : ")
 
     def load_known(self, root_dir):
         if root_dir is None:
@@ -350,7 +380,6 @@ class Assistant(QObject):
 class PreTrainThread(QRunnable):
     def __init__(self):
         super(PreTrainThread, self).__init__()
-        self
 
 
 class ResThread(QRunnable):
@@ -408,11 +437,11 @@ class FaceThread(QRunnable):
 
 
 '''
-    加载数据与模型用其他线程， error， 其他线程加载错误。
-    CSS 界面，
-    4人检测，
-    数据库展示,Widget
+    加载数据与模型用其他线程， error， 其他线程加载错误。（done）
+    CSS 界面， （todo）
+    4人检测，（todo）
+    数据库展示,Widget（Done）
     
-    # 界面切换，使用stack进行顶部切换即可，， UI继续优化
+    # 界面切换，使用stack进行顶部切换即可，， UI继续优化  （done）
 
 '''
