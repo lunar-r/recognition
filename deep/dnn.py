@@ -65,6 +65,8 @@ class DeepFace:
         self.classifier = None
 
     def pre_train(self, path):
+        first = datetime.datetime.now()
+        print("run into pre train")
         self.metadata = load_metadata(path)
         self.embedded = np.zeros((self.metadata.shape[0], 128))
 
@@ -85,7 +87,8 @@ class DeepFace:
         self.encoder.fit(targets)
         # 将各种标签分配一个可数的连续编号
         self.y = self.encoder.transform(targets)
-        print("inception net pre train finish ...")
+        second = datetime.datetime.now()
+        print("inception net pre train finish after " + str(second - first) + " seconds")
 
     def align_image(self, img):
         return self.alignment.align(96, img, self.alignment.getLargestFaceBoundingBox(img),

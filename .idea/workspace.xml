@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="dcc6b798-3a20-42d8-83d4-5ab623ff361e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deep/dnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/deep/dnn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/remain.py" beforeDir="false" afterPath="$PROJECT_DIR$/remain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_thread.py" beforeDir="false" afterPath="$PROJECT_DIR$/thread_t.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/get_person.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/get_person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/grammar_t.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/grammar_t.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/rename_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/rename_file.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,12 +21,14 @@
     <SUITE FILE_PATH="coverage/face_system$main.coverage" NAME="main Coverage Results" MODIFIED="1554012445873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$multi.coverage" NAME="multi Coverage Results" MODIFIED="1554946463409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$second_ui.coverage" NAME="second_ui Coverage Results" MODIFIED="1554953667007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/face_system$get_person.coverage" NAME="get_person Coverage Results" MODIFIED="1554707277740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$try_thread.coverage" NAME="try_thread Coverage Results" MODIFIED="1554901702809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/face_system$rename_file.coverage" NAME="rename_file Coverage Results" MODIFIED="1555061169047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/face_system$get_person.coverage" NAME="get_person Coverage Results" MODIFIED="1555415213853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/face_system$start.coverage" NAME="start Coverage Results" MODIFIED="1554778331378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/face_system$dnn.coverage" NAME="dnn Coverage Results" MODIFIED="1554013685518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/deep" />
+    <SUITE FILE_PATH="coverage/face_system$thread_t.coverage" NAME="thread_t Coverage Results" MODIFIED="1555233168608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/face_system$dnn.coverage" NAME="dnn Coverage Results" MODIFIED="1555061427736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/deep" />
     <SUITE FILE_PATH="coverage/face_system$ui_test.coverage" NAME="ui_test Coverage Results" MODIFIED="1554776996770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/face_system$grammar_t.coverage" NAME="grammar_t Coverage Results" MODIFIED="1554970459286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/face_system$grammar_t.coverage" NAME="grammar_t Coverage Results" MODIFIED="1555320573391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/face_system$pytest_in_test_grammer_py.coverage" NAME="pytest in test_grammer.py Coverage Results" MODIFIED="1554968943078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/face_system$second.coverage" NAME="second Coverage Results" MODIFIED="1554777215658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/face_system$thread_try.coverage" NAME="thread_try Coverage Results" MODIFIED="1554892138007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -30,39 +37,42 @@
     <SUITE FILE_PATH="coverage/face_system$one.coverage" NAME="one Coverage Results" MODIFIED="1554344632891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1554346986764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$testUI.coverage" NAME="testUI Coverage Results" MODIFIED="1554948833495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/face_system$remain.coverage" NAME="remain Coverage Results" MODIFIED="1555038834803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/face_system$face_dete.coverage" NAME="face_dete Coverage Results" MODIFIED="1555313350083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/face_system$remain.coverage" NAME="remain Coverage Results" MODIFIED="1555415973745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-2040295204">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="32" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="6" />
-          <entry key="project.open.time.21" value="3" />
+          <entry key="project.open.time.21" value="5" />
           <entry key="project.open.time.22" value="2" />
+          <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.26" value="3" />
           <entry key="project.open.time.28" value="1" />
-          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.29" value="1" />
+          <entry key="project.open.time.30" value="2" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="html" value="1" />
-          <entry key="jpg" value="17" />
+          <entry key="jpg" value="19" />
           <entry key="png" value="7" />
-          <entry key="py" value="122" />
+          <entry key="py" value="142" />
           <entry key="qss" value="4" />
         </counts>
       </usages-collector>
@@ -70,24 +80,24 @@
         <counts>
           <entry key="CSS" value="4" />
           <entry key="HTML" value="1" />
-          <entry key="Image" value="24" />
+          <entry key="Image" value="26" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="122" />
+          <entry key="Python" value="142" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="54" />
+          <entry key="dummy" value="62" />
           <entry key="gitignore" value="26" />
-          <entry key="py" value="11759" />
+          <entry key="py" value="15356" />
           <entry key="qss" value="427" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="427" />
-          <entry key="PLAIN_TEXT" value="80" />
-          <entry key="Python" value="11759" />
+          <entry key="PLAIN_TEXT" value="88" />
+          <entry key="Python" value="15356" />
         </counts>
       </usages-collector>
     </session>
@@ -97,15 +107,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/remain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-962">
-              <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+            <state relative-caret-position="260">
+              <caret line="94" column="32" lean-forward="true" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1555038830600" expanded="true" signature="250:13384" ph="..." />
-                <marker date="1555038830600" expanded="true" signature="2850:2984" ph="..." />
-                <marker date="1555038830600" expanded="true" signature="4395:4400" ph="..." />
-                <marker date="1555038830600" expanded="true" signature="4419:4909" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/get_person.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="68" column="37" lean-forward="true" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -113,17 +128,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/grammar_t.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/second_ui.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="282" column="28" selection-start-line="282" selection-start-column="13" selection-end-line="282" selection-end-column="28" />
+            <state relative-caret-position="618">
+              <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+              <folding>
+                <marker date="1555320573311" expanded="true" signature="29:34" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,26 +148,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>show_camera</find>
-      <find>count</find>
-      <find>showImage</find>
-      <find>label_video</find>
-      <find>start_face</find>
-      <find>DeepFace</find>
-      <find>btn_event</find>
-      <find>img_url</find>
-      <find>class_method</find>
-      <find>Deep</find>
-      <find>worker</find>
-      <find>button</find>
-      <find>img_</find>
-      <find>Video</find>
-      <find>group</find>
-      <find>data_list</find>
-      <find>cente</find>
-      <find>stack</find>
-      <find>stackedWidget</find>
-      <find>Liming</find>
       <find>table</find>
       <find>QIc</find>
       <find>person</find>
@@ -169,6 +158,26 @@
       <find>model</find>
       <find>btn_select</find>
       <find>save_img</find>
+      <find>time_flash</find>
+      <find>self.worker</find>
+      <find>open_camera</find>
+      <find>face en</find>
+      <find>align_image</find>
+      <find>2000</find>
+      <find>set_la</find>
+      <find>show_face`</find>
+      <find>face_det</find>
+      <find>set_label</find>
+      <find>setScaledContents</find>
+      <find>face_detect_state</find>
+      <find>time_video</find>
+      <find>60</find>
+      <find>face_dect</find>
+      <find>show_face</find>
+      <find>set_worker</find>
+      <find>worker</find>
+      <find>predict</find>
+      <find>face_reco</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,20 +194,24 @@
         <option value="$PROJECT_DIR$/tests/face_analysis.py" />
         <option value="$PROJECT_DIR$/tests/start.py" />
         <option value="$PROJECT_DIR$/tests/ui_test.py" />
-        <option value="$PROJECT_DIR$/deep/dnn.py" />
         <option value="$PROJECT_DIR$/thread_try.py" />
         <option value="$PROJECT_DIR$/interact.py" />
-        <option value="$PROJECT_DIR$/test_thread.py" />
         <option value="$PROJECT_DIR$/try_thread.py" />
         <option value="$PROJECT_DIR$/second.py" />
         <option value="$PROJECT_DIR$/source/stylesheet/main.qss" />
         <option value="$PROJECT_DIR$/data.py" />
         <option value="$PROJECT_DIR$/tests/multi.py" />
         <option value="$PROJECT_DIR$/utils/test_grammer.py" />
-        <option value="$PROJECT_DIR$/utils/grammar_t.py" />
         <option value="$PROJECT_DIR$/second_ui.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/utils/rename_file.py" />
+        <option value="$PROJECT_DIR$/deep/dnn.py" />
+        <option value="$PROJECT_DIR$/test_thread.py" />
+        <option value="$PROJECT_DIR$/thread_t.py" />
+        <option value="$PROJECT_DIR$/utils/face_dete.py" />
+        <option value="$PROJECT_DIR$/utils/grammar_t.py" />
         <option value="$PROJECT_DIR$/remain.py" />
+        <option value="$PROJECT_DIR$/utils/get_person.py" />
       </list>
     </option>
   </component>
@@ -208,7 +221,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -220,7 +233,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,10 +240,21 @@
               <item name="face_system" type="b2602c69:ProjectViewProjectNode" />
               <item name="face_system" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="face_system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="face_system" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="face_system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="face_system" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -242,17 +265,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UserInfo\workDir\face\face_system\source\video" />
+      <recent name="D:\UserInfo\workDir\face\face_system\tests" />
+      <recent name="D:\UserInfo\workDir\face\face_system" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\UserInfo\workDir\face\face_system\source\ui" />
       <recent name="D:\UserInfo\workDir\face\face_system" />
       <recent name="D:\UserInfo\workDir\face\face_system\tests" />
       <recent name="D:\UserInfo\workDir\face\face_system\source\images" />
       <recent name="D:\UserInfo\workDir\face\face_system\source" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\UserInfo\workDir\face\face_system\tests" />
-      <recent name="D:\UserInfo\workDir\face\face_system\source\video" />
-      <recent name="D:\UserInfo\workDir\face\face_system" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -268,6 +291,50 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.remain">
+    <configuration name="face_dete" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="face_system" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/face_dete.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="get_person" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="face_system" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/get_person.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="grammar_t" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="face_system" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -312,7 +379,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="second_ui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="thread_t" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="face_system" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -325,67 +392,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/second_ui.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/thread_t.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="testUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="face_system" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/testUI.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest in test_grammer.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="face_system" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/utils/test_grammer.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.remain" />
-      <item itemvalue="Python.testUI" />
-      <item itemvalue="Python.second_ui" />
-      <item itemvalue="Python tests.pytest in test_grammer.py" />
       <item itemvalue="Python.grammar_t" />
+      <item itemvalue="Python.thread_t" />
+      <item itemvalue="Python.face_dete" />
+      <item itemvalue="Python.get_person" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.remain" />
+        <item itemvalue="Python.get_person" />
         <item itemvalue="Python.grammar_t" />
-        <item itemvalue="Python tests.pytest in test_grammer.py" />
-        <item itemvalue="Python.second_ui" />
-        <item itemvalue="Python.testUI" />
+        <item itemvalue="Python.face_dete" />
+        <item itemvalue="Python.thread_t" />
       </list>
     </recent_temporary>
   </component>
@@ -410,19 +439,29 @@
       <configuration name="pytest in test_grammer.py" configurationId="tests" />
     </history-entry>
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <frame x="0" y="0" width="1536" height="864" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34404284" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25301206" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32991013" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27599487" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2605905" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3992298" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32991013" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991013" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
@@ -465,34 +504,7 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="database_show" />
-        <watch expression="self.database_show" />
-        <watch expression="item" />
-      </configuration>
-    </watches-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/logos/xg.jpg" />
-    <entry file="file://$PROJECT_DIR$/source/logos/Joanne2.jpg" />
-    <entry file="file://$PROJECT_DIR$/source/logos/Joanne.jpg" />
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/667759169/PyQt5/QtCore/QThread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/images/Jacques_Chirac/Jacques_Chirac_0001.jpg" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/sklearn/neighbors/classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="149" column="32" lean-forward="true" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/primary.py" />
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/667759169/cv2/cv2/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -508,7 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/images/Rowing/Rowing_10001.jpg" />
     <entry file="file://$PROJECT_DIR$/source/images/Hugo_Chavez/Hugo_Chavez_0001.jpg" />
     <entry file="file://$PROJECT_DIR$/source/images/Hugo_Chavez/Hugo_Chavez_0002.jpg" />
     <entry file="file://$PROJECT_DIR$/source/images/Hugo_Chavez/Hugo_Chavez_0003.jpg" />
@@ -521,20 +532,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/people.jpg" />
-    <entry file="file://$PROJECT_DIR$/utils/get_person.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/rename_file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deep/align.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
@@ -563,15 +560,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deep/dnn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="77" column="47" lean-forward="true" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/thread_try.py" />
-    <entry file="file://$PROJECT_DIR$/test_thread.py" />
     <entry file="file://$PROJECT_DIR$/errors.jpg" />
     <entry file="file://$PROJECT_DIR$/tests/python_2019-04-10_21-20-26.png" />
     <entry file="file://$PROJECT_DIR$/tests/main_ui.png" />
@@ -591,13 +580,6 @@
     <entry file="file://$PROJECT_DIR$/tests/start.py" />
     <entry file="file://$PROJECT_DIR$/tests/Ternate.py" />
     <entry file="file://$PROJECT_DIR$/tests/testUI.py" />
-    <entry file="file://$PROJECT_DIR$/utils/stack_widget_show.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="105" column="30" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/otherImg/main_ui.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -625,13 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/element.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="97" column="27" lean-forward="true" selection-start-line="97" selection-start-column="27" selection-end-line="97" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -639,30 +614,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/grammar_t.py">
+    <entry file="file://$PROJECT_DIR$/deep/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="50" column="59" selection-start-line="50" selection-start-column="59" selection-end-line="50" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/rename_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deep/dnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1742">
+          <caret line="84" column="51" selection-start-line="84" selection-start-column="51" selection-end-line="84" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/element.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-442">
+          <caret line="56" column="27" lean-forward="true" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/face_recognition/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/stack_widget_show.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2600">
+          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread_t.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/draw_face.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/second_ui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="282" column="28" selection-start-line="282" selection-start-column="13" selection-end-line="282" selection-end-column="28" />
+        <state relative-caret-position="208">
+          <caret line="320" column="36" selection-start-line="320" selection-start-column="36" selection-end-line="320" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/667759169/cv2/cv2/CascadeClassifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="36" column="49" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/images/Rowing/Rowing_10002.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/images/Rowing/Rowing_10001.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/face_dete.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/grammar_t.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding>
+            <marker date="1555320573311" expanded="true" signature="29:34" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/get_person.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="68" column="37" lean-forward="true" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/remain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-962">
-          <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        <state relative-caret-position="260">
+          <caret line="94" column="32" lean-forward="true" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1555038830600" expanded="true" signature="250:13384" ph="..." />
-            <marker date="1555038830600" expanded="true" signature="2850:2984" ph="..." />
-            <marker date="1555038830600" expanded="true" signature="4395:4400" ph="..." />
-            <marker date="1555038830600" expanded="true" signature="4419:4909" ph="..." />
           </folding>
         </state>
       </provider>

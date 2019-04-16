@@ -20,9 +20,11 @@ class Work(QRunnable):
         self.helper = Assistant()
 
     def run(self):
-        res = "Going"
-        self.helper.run(res)
-        print("emit signal with helper")
+        for i in range(1000000):
+            # res = "Going " + str(res)
+            # self.helper.run(res)
+            # print("emit signal with helper")
+            print("time to " + str(i))
 
 
 class Slot(QWidget):

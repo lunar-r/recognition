@@ -1,6 +1,8 @@
 import os
 import cv2
 import sys
+import copy
+import datetime
 import face_recognition
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
@@ -9,8 +11,81 @@ from deep.dnn import DeepFace
 from second_ui import Ui_MainWindow
 
 
+class Assistant(QObject):
+    signal = pyqtSignal(str)
+
+    def run(self, res):
+        self.signal.emit(str(res))
+
+
+class ResThread(QRunnable):
+    def __init__(self):
+        super(ResThread, self).__init__()
+        self.img = None
+        self.helper = Assistant()
+        self.known_face_names = None
+        self.known_face_encodings = None
+
+    def set_img(self, img):
+        self.img = img
+
+    def set_dict(self, known_names, known_encodings):
+        self.known_face_names = known_names
+        self.known_face_encodings = known_encodings
+
+    def run(self):
+        begin = datetime.datetime.now()
+        face_locations = face_recognition.face_locations(self.img)
+        location = datetime.datetime.now()
+        print("location time is " + str(location - begin))
+        face_encodings = face_recognition.face_encodings(self.img, face_locations)
+        middle = datetime.datetime.now()
+        print("thread use img time: " + str(middle - begin))
+        res = ""
+        for face_encoding in face_encodings:
+            matches = face_recognition.compare_faces(self.known_face_encodings, face_encoding)
+            name = "unknown"
+            if True in matches:
+                first_match_index = matches.index(True)
+                name = self.known_face_names[first_match_index]
+            res = res + name + ","
+        self.helper.run(res)
+        end = datetime.datetime.now()
+        print("the cost of recognition is " + str(end - begin))
+
+
+class FaceThread(QRunnable):
+    def __init__(self):
+        super(FaceThread, self).__init__()
+        self.img = None
+        self.model = None
+        self.worker = None
+        self.classifier = None
+        self.class_method = None
+        self.helper = Assistant()
+
+    def set_img(self, img):
+        self.img = img
+
+    def set_worker(self, worker):
+        self.worker = worker
+
+    def set_classifier(self, classifier):
+        self.classifier = classifier
+
+    def run(self):
+        self.worker.train(self.classifier)
+        start = datetime.datetime.now()
+        res = self.worker.predict(self.img)
+        end = datetime.datetime.now()
+        print("inception net make prediction use " + str(end - start) + " seconds")
+        print("inception net predict res: " + res)
+        self.helper.run(res)
+
+
 class MyWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
+        first = datetime.datetime.now()
         super(MyWindow, self).__init__()
 
         self.time_camera = QTimer()
@@ -57,6 +132,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.qss = self.read_qss('./source/stylesheet/main.qss')
         self.setStyleSheet(self.qss)
         self.show()
+        second = datetime.datetime.now()
+        print("start program use " + str(second - first) + "  seconds..")
 
     def select_model_ince(self):
         self.model = "Inception"
@@ -96,7 +173,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def show_data(self, url, offset, idx):
         if url is None:
             return
-        print("into show data")
         count = -1
         for name in os.listdir(url):
             count = count + 1
@@ -109,10 +185,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             item = QTableWidgetItem()
             item.setText(name)
             self.database_show.setItem(row, 0, item)
-            print("person name is :" + name)
             sum = 0
             img_path = "./source/otherImg/people.jpg"
-            print("person image url is: " + img_path)
             for file in os.listdir(os.path.join(url, name)):
                 img_path = url + "/" + name + "/" + file
                 sum = sum + 1
@@ -128,13 +202,12 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             item.setAlignment(Qt.AlignCenter)
             item.setPixmap(QPixmap(img_path).scaled(60, 60))
             self.database_show.setCellWidget(row, 3, item)
-        print(" the res of count is :" + str(count))
 
     def set_data(self):
         self.img_infos = [self.label_img_info_1, self.label_img_info_2, self.label_img_info_3, self.label_img_info_4]
         self.img_shows = [self.label_img_show_1, self.label_img_show_2, self.label_img_show_3, self.label_img_show_4]
         for item in self.img_shows:
-            item.setFixedSize(191, 61)
+            item.setFixedSize(192, 128)
             item.setScaledContents(True)
 
         print("set labels done...")
@@ -186,7 +259,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         show = cv2.cvtColor(show, cv2.COLOR_BGR2RGB)
         if self.face_detect_state:
             # opencv 读取图片的样式，不能通过Qlabel进行显示，需要转换为Qimage QImage(uchar * data, int width,
-            # 1.3和5是特征的最小、最大检测窗口，它改变检测结果也会改变
             gray_image = cv2.cvtColor(show, cv2.COLOR_BGR2GRAY)
             faces = self.classifier.detectMultiScale(gray_image, 1.3, 5)
             for (x, y, w, h) in faces:
@@ -203,8 +275,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         if self.face_detect_state:
             # opencv 读取图片的样式，不能通过Qlabel进行显示，需要转换为Qimage QImage(uchar * data, int width,
             gray_image = cv2.cvtColor(show, cv2.COLOR_BGR2GRAY)
-            # 1.3和5是特征的最小、最大检测窗口，它改变检测结果也会改变
-            faces = self.classifier.detectMultiScale(gray_image, 1.3, 5)
+            faces = self.classifier.detectMultiScale(gray_image, 1.2, 4)
             for (x, y, w, h) in faces:
                 cv2.rectangle(show, (x, y), (x + w, y + h), (0, 255, 0), 2)  # 画出人脸
         self.showImage = QImage(show.data, show.shape[1], show.shape[0], QImage.Format_RGB888)
@@ -219,12 +290,16 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                 self.thd.set_worker(self.worker)
                 self.thd.set_classifier(self.class_method)
                 self.thd.helper.signal.connect(self.set_names)
+                print("start inception thread")
             else:
                 # multi
                 self.thd = ResThread()
-                self.thd.set_img(self.frame)
+                temp = copy.copy(self.frame)
+                temp = cv2.resize(temp, (0, 0), fx=0.3, fy=0.3)
+                self.thd.set_img(temp)
                 self.thd.set_dict(self.known_names, self.known_encodings)
                 self.thd.helper.signal.connect(self.set_names)
+                print("start resnet thread use")
             self.pool.start(self.thd)
 
     def face_detect(self):
@@ -234,7 +309,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def face_reco(self):
         self.stackedWidget.setCurrentIndex(0)
         if self.time_flash.isActive() is False:
-            self.time_flash.start(2000)
+            self.time_flash.start(4000)
             self.btn_face_reco.setText(u"关闭人脸识别")
         else:
             self.time_flash.stop()
@@ -305,6 +380,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def load_known(self, root_dir):
         if root_dir is None:
             return
+        first = datetime.datetime.now()
         names = []
         encodings = []
         print(root_dir)
@@ -314,17 +390,23 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                 img = face_recognition.load_image_file(root_dir + "/" + name + "/" + file)
                 temp = face_recognition.face_encodings(img)
                 if len(temp) == 0:
-                    print("face encoding is not exist, img error, exit.")
-                    sys.exit(0)
+                    print(name + "/" + file)
+                    continue
+
                 encoding = temp[0]
                 encodings.append(encoding)
                 break
-        print("Known data are loaded (for resNet)...")
+
         self.known_names = names
         self.known_encodings = encodings
+        second = datetime.datetime.now()
+        print("Known data are loaded (for resNet) after " + str(second - first) + " seconds")
 
     def set_names(self, data):
         names = list(filter(lambda x: x != '', data.split(",")))
+        for i in range(4):
+            self.img_shows[i].clear()
+            self.img_infos[i].clear()
         print(names)
         for i, name in enumerate(names):
             if i < 4:
@@ -356,6 +438,9 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         for i in range(4):
             self.img_infos[i].clear()
             self.img_shows[i].clear()
+
+        self.time_flash.stop()
+        self.btn_face_reco.setText(u"人脸识别")
         if data == "video":
             self.time_video.stop()
             self.btn_open_video.setText(u'打开视频')
@@ -370,70 +455,7 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 
 
-class Assistant(QObject):
-    signal = pyqtSignal(str)
 
-    def run(self, res):
-        self.signal.emit(str(res))
-
-
-class PreTrainThread(QRunnable):
-    def __init__(self):
-        super(PreTrainThread, self).__init__()
-
-
-class ResThread(QRunnable):
-    def __init__(self):
-        super(ResThread, self).__init__()
-        self.img = None
-        self.helper = Assistant()
-        self.known_face_names = None
-        self.known_face_encodings = None
-
-    def set_img(self, img):
-        self.img = img
-
-    def set_dict(self, known_names, known_encodings):
-        self.known_face_names = known_names
-        self.known_face_encodings = known_encodings
-
-    def run(self):
-        face_locations = face_recognition.face_locations(self.img)
-        face_encodings = face_recognition.face_encodings(self.img, face_locations)
-        res = ""
-        for face_encoding in face_encodings:
-            matches = face_recognition.compare_faces(self.known_face_encodings, face_encoding)
-            name = "unknown"
-            if True in matches:
-                first_match_index = matches.index(True)
-                name = self.known_face_names[first_match_index]
-            res = res + name + ","
-        self.helper.run(res)
-
-
-class FaceThread(QRunnable):
-    def __init__(self):
-        super(FaceThread, self).__init__()
-        self.img = None
-        self.model = None
-        self.worker = None
-        self.classifier = None
-        self.class_method = None
-        self.helper = Assistant()
-
-    def set_img(self, img):
-        self.img = img
-
-    def set_worker(self, worker):
-        self.worker = worker
-
-    def set_classifier(self, classifier):
-        self.classifier = classifier
-
-    def run(self):
-        self.worker.train(self.classifier)
-        res = self.worker.predict(self.img)
-        self.helper.run(res)
 
 
 '''
