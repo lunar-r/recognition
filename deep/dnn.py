@@ -65,8 +65,7 @@ class DeepFace:
         self.classifier = None
 
     def pre_train(self, path):
-        first = datetime.datetime.now()
-        print("run into pre train")
+
         self.metadata = load_metadata(path)
         self.embedded = np.zeros((self.metadata.shape[0], 128))
 
@@ -87,8 +86,6 @@ class DeepFace:
         self.encoder.fit(targets)
         # 将各种标签分配一个可数的连续编号
         self.y = self.encoder.transform(targets)
-        second = datetime.datetime.now()
-        print("inception net pre train finish after " + str(second - first) + " seconds")
 
     def align_image(self, img):
         return self.alignment.align(96, img, self.alignment.getLargestFaceBoundingBox(img),
@@ -97,7 +94,6 @@ class DeepFace:
     def train(self, classifier=LinearSVC):
         X_train = self.embedded
         y_train = self.y
-        print("use Method" + str(classifier) + "to train model.")
 
         self.classifier = globals()[classifier]()
         self.classifier.fit(X_train, y_train)
@@ -109,10 +105,7 @@ class DeepFace:
         img = (img / 255.).astype(np.float32)
         one_embedded = self.pre_model.predict(np.expand_dims(img, axis=0))[0]
         example_prediction = self.classifier.predict([one_embedded])
-        print(example_prediction)
         example_identity = self.encoder.inverse_transform(example_prediction)[0]
-
-        print("the result of recognition: " + str(example_identity))
         return str(example_identity)
 
 
@@ -125,5 +118,5 @@ def main(argv=None):
     cv2.waitKey(0)
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()

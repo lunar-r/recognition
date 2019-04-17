@@ -1,31 +1,24 @@
-import copy
+import sys
+import logging
 
 
-class Anmial():
-    def __init__(self):
-        self.name = "Animal"
-        self.type = "Dynamic"
-        self.names = ["an", "be"]
+logger = logging.getLogger("global_logger")
+logger.setLevel(logging.DEBUG)
 
-    def print(self):
-        print("the id of list in class : " + str(id(self.names)))
+print_handler = logging.StreamHandler(sys.stderr)
+print_handler.setLevel(logging.DEBUG)
+print_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
 
+file_handler = logging.FileHandler("excution.log")
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
 
-a = Anmial()
-a.print()
+logger.addHandler(print_handler)
+logger.addHandler(file_handler)
 
-names = a.names
-print("the id of list out class : " + str(id(names)))
-others = []
-print("the id of new list out class : " + str(id(others)))
-others.append("one")
-others.append("two")
+logger.debug('debug message')
+logger.info('info message')
+logger.warning('warning message')
+# logger.error('error message')
+# logger.critical('critical message')
 
-names.clear()
-for i in range(len(others)):
-    names.append(others[i])
-
-
-print("the id of list out class at the end: " + str(id(names)))
-
-print(names[0])

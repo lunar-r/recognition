@@ -1,0 +1,14 @@
+2019-04-17 12:01:35,214 - DEBUG - debug message
+2019-04-17 12:01:35,215 - INFO - info message
+2019-04-17 12:01:35,215 - WARNING - warning message
+2019-04-17 12:01:35,215 - ERROR - error message
+2019-04-17 12:01:35,215 - CRITICAL - critical message
+2019-04-17 12:05:00,092 - DEBUG - debug message
+2019-04-17 12:05:00,092 - INFO - info message
+2019-04-17 12:05:00,092 - WARNING - warning message
+2019-04-17 12:05:21,842 - DEBUG - debug message
+2019-04-17 12:05:21,842 - INFO - info message
+2019-04-17 12:05:21,842 - WARNING - warning message
+2019-04-17 12:05:51,232 - DEBUG - debug message
+2019-04-17 12:05:51,232 - INFO - info message
+2019-04-17 12:05:51,232 - WARNING - warning message

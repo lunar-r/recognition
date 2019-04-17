@@ -1,7 +1,9 @@
 import os
 import cv2
 import sys
+import time
 import copy
+import logging
 import datetime
 import face_recognition
 from PyQt5.QtCore import *
@@ -25,6 +27,7 @@ class ResThread(QRunnable):
         self.helper = Assistant()
         self.known_face_names = None
         self.known_face_encodings = None
+        self.logger = None
 
     def set_img(self, img):
         self.img = img
@@ -33,14 +36,13 @@ class ResThread(QRunnable):
         self.known_face_names = known_names
         self.known_face_encodings = known_encodings
 
+    def set_logger(self, logger):
+        self.logger = logger
+
     def run(self):
         begin = datetime.datetime.now()
         face_locations = face_recognition.face_locations(self.img)
-        location = datetime.datetime.now()
-        print("location time is " + str(location - begin))
         face_encodings = face_recognition.face_encodings(self.img, face_locations)
-        middle = datetime.datetime.now()
-        print("thread use img time: " + str(middle - begin))
         res = ""
         for face_encoding in face_encodings:
             matches = face_recognition.compare_faces(self.known_face_encodings, face_encoding)
@@ -51,7 +53,7 @@ class ResThread(QRunnable):
             res = res + name + ","
         self.helper.run(res)
         end = datetime.datetime.now()
-        print("the cost of recognition is " + str(end - begin))
+        self.logger.debug("face recognition in resnet use  %s  seconds ...", str(end - begin))
 
 
 class FaceThread(QRunnable):
@@ -62,6 +64,7 @@ class FaceThread(QRunnable):
         self.worker = None
         self.classifier = None
         self.class_method = None
+        self.logger = None
         self.helper = Assistant()
 
     def set_img(self, img):
@@ -69,6 +72,9 @@ class FaceThread(QRunnable):
 
     def set_worker(self, worker):
         self.worker = worker
+
+    def set_logger(self, logger):
+        self.logger = logger
 
     def set_classifier(self, classifier):
         self.classifier = classifier
@@ -78,16 +84,17 @@ class FaceThread(QRunnable):
         start = datetime.datetime.now()
         res = self.worker.predict(self.img)
         end = datetime.datetime.now()
-        print("inception net make prediction use " + str(end - start) + " seconds")
-        print("inception net predict res: " + res)
         self.helper.run(res)
+        self.logger.debug("face recognition in inception net use  %s  seconds ...", str(end - start))
 
 
 class MyWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         first = datetime.datetime.now()
         super(MyWindow, self).__init__()
-
+        self.logger = logging.getLogger("global_logger")
+        self.print_handler = None
+        self.file_handler = None
         self.time_camera = QTimer()
         self.time_video = QTimer()
         self.time_flash = QTimer()
@@ -97,8 +104,10 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.class_method = "KNeighborsClassifier"
         self.known_names = None
         self.known_encodings = None
-        self.frame = None
         self.thd = None
+        self.show_img = None
+        self.frame = None
+        self.showImage = None
         self.pool = QThreadPool.globalInstance()
         self.img_state = False
         self.face_detect_state = False
@@ -108,7 +117,10 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.classifier = cv2.CascadeClassifier(self.harr_filepath)  # 加载人脸特征分类器
 
         self.load_known(self.img_url)
+        f = datetime.datetime.now()
         self.worker.pre_train(self.img_url)
+        s = datetime.datetime.now()
+        self.logger.debug("pre train of inception use %s seconds", str(f - s))
 
         self.set_ui(self)
         menu = QMenu()
@@ -127,43 +139,60 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.idx = 5
         self.set_data()
         self.set_slot()
+        self.set_log()
         self.setWindowTitle("FaceSystem")
         self.setWindowIcon(QIcon("./source/logos/apple.png"))
         self.qss = self.read_qss('./source/stylesheet/main.qss')
         self.setStyleSheet(self.qss)
-        self.show()
+
         second = datetime.datetime.now()
-        print("start program use " + str(second - first) + "  seconds..")
+        self.logger.info("start program use %s seconds ...", str(second - first))
+        self.show()
+
+    def set_log(self):
+        self.logger.setLevel(logging.DEBUG)
+        self.print_handler = logging.StreamHandler(sys.stderr)
+        self.print_handler.setLevel(logging.DEBUG)
+        self.print_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+
+        self.file_handler = logging.FileHandler("face_info.log")
+        self.file_handler.setLevel(logging.INFO)
+        self.file_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+
+        self.logger.addHandler(self.print_handler)
+        self.logger.addHandler(self.file_handler)
 
     def select_model_ince(self):
         self.model = "Inception"
-        self.label_model_info.setText("Inception")
-        print(self.model)
+        self.label_accuracy_info.setText("95.70%")
+        self.label_model_info.setText("Inception Net")
+        self.logger.debug("select model: %s", self.model)
 
     def select_model_res(self):
         self.model = "ResNet"
+        self.label_accuracy_info.setText("99.38%")
         self.label_model_info.setText("ResNet")
-        print(self.model)
+        self.logger.debug("select model: %s", self.model)
 
     def select_class_knn(self):
         self.class_method = self.infos[0]
         self.label_class_info.setText(self.infos[0])
-        print(self.class_method)
+        self.logger.debug("select classifier: %s", self.class_method)
 
     def select_class_dtree(self):
         self.class_method = self.infos[1]
         self.label_class_info.setText(self.infos[1])
-        print(self.class_method)
+        self.logger.debug("select classifier: %s", self.class_method)
 
     def select_class_rf(self):
         self.class_method = self.infos[2]
         self.label_class_info.setText(self.infos[2])
-        print(self.class_method)
+        self.logger.debug("select classifier: %s", self.class_method)
 
     def select_class_lr(self):
         self.class_method = self.infos[3]
         self.label_class_info.setText(self.infos[3])
-        print(self.class_method)
+        self.logger.debug("select classifier: %s", self.class_method)
 
     @staticmethod
     def read_qss(style):
@@ -195,7 +224,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             self.database_show.setItem(row, 1, item)
 
             item = QTableWidgetItem()
-            item.setText("2019.4.10")
+            time_info = time.ctime(os.stat(img_path).st_ctime)
+            item.setText(time_info)
             self.database_show.setItem(row, 2, item)
 
             item = QLabel("")
@@ -204,15 +234,15 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             self.database_show.setCellWidget(row, 3, item)
 
     def set_data(self):
-        self.img_infos = [self.label_img_info_1, self.label_img_info_2, self.label_img_info_3, self.label_img_info_4]
-        self.img_shows = [self.label_img_show_1, self.label_img_show_2, self.label_img_show_3, self.label_img_show_4]
+        self.img_infos = [self.label_img_info_1, self.label_img_info_2, self.label_img_info_3]
+        self.img_shows = [self.label_img_show_1, self.label_img_show_2, self.label_img_show_3]
         for item in self.img_shows:
             item.setFixedSize(192, 128)
             item.setScaledContents(True)
 
-        print("set labels done...")
+        self.logger.debug("Finish set labels ..")
         self.show_data(self.img_url, self.offset, self.idx)
-        print("show data done...")
+        self.logger.debug("Finish show data ...")
 
     def set_slot(self):
         self.time_camera.timeout.connect(self.show_camera)
@@ -236,27 +266,23 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.btn_left_page.clicked.connect(self.turn_left_page)
         self.btn_right_page.clicked.connect(self.turn_right_page)
 
-        print("set slots done...")
-
     def turn_left_page(self):
-        print("Into turn left page")
+        self.logger.debug("turn to the left page ...")
         if self.offset < self.idx:
-            print("at first page")
+            self.logger.debug("at the first page ...")
         else:
             self.offset = self.offset - self.idx
             self.show_data(self.img_url, self.offset, self.idx)
-            print("flush page")
 
     def turn_right_page(self):
-        print("Into turn right page")
+        self.logger.debug("turn to the right page ...")
         self.offset = self.offset + self.idx
         self.show_data(self.img_url, self.offset, self.idx)
-        print("flush page")
 
     def show_camera(self):
         ret, self.frame = self.cap.read()
-        show = cv2.resize(self.frame, (512, 384))
-        show = cv2.cvtColor(show, cv2.COLOR_BGR2RGB)
+        self.show_img = cv2.resize(self.frame, (512, 384))
+        show = cv2.cvtColor(self.show_img, cv2.COLOR_BGR2RGB)
         if self.face_detect_state:
             # opencv 读取图片的样式，不能通过Qlabel进行显示，需要转换为Qimage QImage(uchar * data, int width,
             gray_image = cv2.cvtColor(show, cv2.COLOR_BGR2GRAY)
@@ -270,8 +296,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         ret, self.frame = self.cap.read()
         if ret is False:
             self.close_video()
-        show = cv2.resize(self.frame, (512, 384))
-        show = cv2.cvtColor(show, cv2.COLOR_BGR2RGB)
+        self.show_img = cv2.resize(self.frame, (512, 384))
+        show = cv2.cvtColor(self.show_img, cv2.COLOR_BGR2RGB)
         if self.face_detect_state:
             # opencv 读取图片的样式，不能通过Qlabel进行显示，需要转换为Qimage QImage(uchar * data, int width,
             gray_image = cv2.cvtColor(show, cv2.COLOR_BGR2GRAY)
@@ -284,22 +310,22 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def show_face(self):
         if self.frame is not None:
             if self.model == "Inception":
-                # single
                 self.thd = FaceThread()
                 self.thd.set_img(self.frame)
+                self.thd.set_logger(self.logger)
                 self.thd.set_worker(self.worker)
                 self.thd.set_classifier(self.class_method)
                 self.thd.helper.signal.connect(self.set_names)
-                print("start inception thread")
+                self.logger.debug("start inception net thread(single)")
             else:
-                # multi
                 self.thd = ResThread()
                 temp = copy.copy(self.frame)
                 temp = cv2.resize(temp, (0, 0), fx=0.3, fy=0.3)
                 self.thd.set_img(temp)
+                self.thd.set_logger(self.logger)
                 self.thd.set_dict(self.known_names, self.known_encodings)
                 self.thd.helper.signal.connect(self.set_names)
-                print("start resnet thread use")
+                self.logger.debug("start resnet thread(multi)")
             self.pool.start(self.thd)
 
     def face_detect(self):
@@ -319,12 +345,11 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.stackedWidget.setCurrentIndex(3)
         pass
 
-    def data_anal(self):
-        self.stackedWidget.setCurrentIndex(1)
-        pass
-
     def data_list(self):
         self.stackedWidget.setCurrentIndex(1)
+
+    def data_anal(self):
+        self.stackedWidget.setCurrentIndex(3)
 
     def start_set(self):
         self.stackedWidget.setCurrentIndex(2)
@@ -357,7 +382,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             self.close_source("video")
 
     def save_img(self):
-        if self.showImage is None:
+        if self.show_img is None:
             return
         self.time_camera.stop()
         self.time_video.stop()
@@ -373,7 +398,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         while os.path.isfile(img_path + name + "_" + str(cur) + ".jpg"):
             cur = cur + 1
         path = img_path + name + "_" + str(cur) + ".jpg"
-        self.showImage.save(path)
+        self.show_img.save(path)
         self.time_video.start(30)
         self.time_camera.start(30)
 
@@ -383,14 +408,13 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         first = datetime.datetime.now()
         names = []
         encodings = []
-        print(root_dir)
         for name in os.listdir(root_dir):
             names.append(name)
             for file in os.listdir(os.path.join(root_dir, name)):
                 img = face_recognition.load_image_file(root_dir + "/" + name + "/" + file)
                 temp = face_recognition.face_encodings(img)
                 if len(temp) == 0:
-                    print(name + "/" + file)
+                    self.logger.debug("face encoding error in %s / %s", name, file)
                     continue
 
                 encoding = temp[0]
@@ -400,20 +424,18 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.known_names = names
         self.known_encodings = encodings
         second = datetime.datetime.now()
-        print("Known data are loaded (for resNet) after " + str(second - first) + " seconds")
+        self.logger.debug("upload known data for resnet use %s seconds ..", str(second - first))
 
     def set_names(self, data):
+        self.logger.debug("the result of recognition: %s", data)
         names = list(filter(lambda x: x != '', data.split(",")))
-        for i in range(4):
+        for i in range(3):
             self.img_shows[i].clear()
             self.img_infos[i].clear()
-        print(names)
         for i, name in enumerate(names):
-            if i < 4:
+            if i < 3:
                 # 展示识别到的信息即可
                 if str.lower(name) != "unknown":
-                    print(type(name))
-                    print(name)
                     self.set_name(i, name)
                     self.set_label(i, name)
 
@@ -422,20 +444,17 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
     def set_label(self, idx, name):
         img = None
-        # print("in set label func, name: " + name)
         path = self.img_url + name
         for file in os.listdir(path):
             file = path + "/" + file
-            # print(file)
             img = QPixmap(file)
             break
-        # print(img.height())
         self.img_shows[idx].setPixmap(img)
 
     def close_source(self, data):
         self.cap.release()
         self.label_video.clear()
-        for i in range(4):
+        for i in range(3):
             self.img_infos[i].clear()
             self.img_shows[i].clear()
 
