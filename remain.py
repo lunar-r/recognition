@@ -3,6 +3,7 @@ import cv2
 import sys
 import time
 import copy
+import json
 import logging
 import datetime
 import face_recognition
@@ -53,6 +54,7 @@ class ResThread(QRunnable):
             res = res + name + ","
         self.helper.run(res)
         end = datetime.datetime.now()
+        self.logger.info("face recognition in resnet is %s", res)
         self.logger.debug("face recognition in resnet use  %s  seconds ...", str(end - begin))
 
 
@@ -85,6 +87,7 @@ class FaceThread(QRunnable):
         res = self.worker.predict(self.img)
         end = datetime.datetime.now()
         self.helper.run(res)
+        self.logger.info("face recognition in inception is %s", res)
         self.logger.debug("face recognition in inception net use  %s  seconds ...", str(end - start))
 
 
@@ -114,15 +117,33 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.img_url = "source/images/"
         self.infos = ["KNeighborsClassifier", "DecisionTreeClassifier", "RandomForestClassifier", "LinearSVC"]
         self.harr_filepath = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
-        self.classifier = cv2.CascadeClassifier(self.harr_filepath)  # 加载人脸特征分类器
+        # 加载人脸特征分类器
+        self.classifier = cv2.CascadeClassifier(self.harr_filepath)
 
-        self.load_known(self.img_url)
-        f = datetime.datetime.now()
-        self.worker.pre_train(self.img_url)
-        s = datetime.datetime.now()
-        self.logger.debug("pre train of inception use %s seconds", str(f - s))
+        self.pre_train_flag = True
+        self.pre_known_flag = True
+
+        with open("status.json", "r") as f:
+            flags = json.load(f)
+            self.pre_train_flag = flags["pre_train_flag"]
+            self.pre_known_flag = flags["pre_known_flag"]
 
         self.set_ui(self)
+        self.set_log()
+
+        if self.pre_known_flag is True:
+            self.load_known(self.img_url)
+        else:
+            self.label_model_info.setText("known data for Resnet not be loaded.")
+
+        if self.pre_train_flag is True:
+            f = datetime.datetime.now()
+            self.worker.pre_train(self.img_url)
+            s = datetime.datetime.now()
+            self.logger.debug("pre train of inception use %s seconds", str(s - f))
+        else:
+            self.label_accuracy_info.setText("pre train pof inception not be executed.")
+
         menu = QMenu()
         menu.addAction("Inception", self.select_model_ince)
         menu.addAction("ResNet", self.select_model_res)
@@ -139,7 +160,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.idx = 5
         self.set_data()
         self.set_slot()
-        self.set_log()
         self.setWindowTitle("FaceSystem")
         self.setWindowIcon(QIcon("./source/logos/apple.png"))
         self.qss = self.read_qss('./source/stylesheet/main.qss')
@@ -227,7 +247,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             time_info = time.ctime(os.stat(img_path).st_ctime)
             item.setText(time_info)
             self.database_show.setItem(row, 2, item)
-
             item = QLabel("")
             item.setAlignment(Qt.AlignCenter)
             item.setPixmap(QPixmap(img_path).scaled(60, 60))
@@ -265,6 +284,43 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
         self.btn_left_page.clicked.connect(self.turn_left_page)
         self.btn_right_page.clicked.connect(self.turn_right_page)
+
+        self.btn_load_data.clicked.connect(self.warp_load_known)
+        self.btn_pre_train.clicked.connect(self.warp_pre_train)
+
+        self.checkBox_load_database.stateChanged.connect(self.update_load_state)
+        self.checkBox_pretrain_model.stateChanged.connect(self.update_model_state)
+
+    def update_load_state(self):
+        cur = self.checkBox_load_database.isChecked()
+        if cur is not self.pre_known_flag:
+            self.pre_known_flag = not self.pre_known_flag
+        self.update_json(self.pre_known_flag, self.pre_train_flag)
+
+    def update_model_state(self):
+        cur = self.checkBox_pretrain_model.isChecked()
+        if cur is not self.pre_train_flag:
+            self.pre_train_flag = not self.pre_train_flag
+        self.update_json(self.pre_known_flag, self.pre_train_flag)
+
+    def update_json(self, known, train):
+        dict = {
+            "pre_train_flag": train,
+            "pre_known_flag": known
+        }
+
+        with open("status.json", "w") as f:
+            json.dump(dict, f)
+            self.logger.info("update init state of variables, pre_train: %s, known_data: %s", train, known)
+
+    def warp_load_known(self):
+        self.load_known(self.img_url)
+
+    def warp_pre_train(self):
+        first = datetime.datetime.now()
+        self.worker.pre_train(self.img_url)
+        second = datetime.datetime.now()
+        self.logger.info("pre train for inception use %s seconds ..", str(second - first))
 
     def turn_left_page(self):
         self.logger.debug("turn to the left page ...")
@@ -329,11 +385,11 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             self.pool.start(self.thd)
 
     def face_detect(self):
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentWidget(self.page_index)
         self.face_detect_state = not self.face_detect_state
 
     def face_reco(self):
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentWidget(self.page_index)
         if self.time_flash.isActive() is False:
             self.time_flash.start(4000)
             self.btn_face_reco.setText(u"关闭人脸识别")
@@ -342,20 +398,27 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             self.btn_face_reco.setText(u"人脸识别")
 
     def face_analysis(self):
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentWidget(self.page_face_anal)
         pass
 
     def data_list(self):
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentWidget(self.page_data_show)
 
     def data_anal(self):
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentWidget(self.page_logging)
+        self.show_log("face_info.log")
 
     def start_set(self):
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentWidget(self.page_setup)
 
     def data_set(self):
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentWidget(self.page_setup)
+
+    def show_log(self, path):
+        with open(path, 'r') as f:
+            context = f.read()
+            print(context)
+        self.text_logging.setText(context)
 
     def open_camera(self):
         if self.time_camera.isActive() is False:
@@ -399,6 +462,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             cur = cur + 1
         path = img_path + name + "_" + str(cur) + ".jpg"
         self.show_img.save(path)
+        self.logger.info("save the person: %s in the path: %s", name, path)
         self.time_video.start(30)
         self.time_camera.start(30)
 
@@ -427,7 +491,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.logger.debug("upload known data for resnet use %s seconds ..", str(second - first))
 
     def set_names(self, data):
-        self.logger.debug("the result of recognition: %s", data)
         names = list(filter(lambda x: x != '', data.split(",")))
         for i in range(3):
             self.img_shows[i].clear()
@@ -478,11 +541,9 @@ if __name__ == '__main__':
 
 
 '''
-    加载数据与模型用其他线程， error， 其他线程加载错误。（done）
-    CSS 界面， （todo）
-    4人检测，（todo）
-    数据库展示,Widget（Done）
-    
+    # 加载数据与模型用其他线程， error， 其他线程加载错误, 可以载入之后再进行加载。。。（done）
+    # 3人检测，（done）
+    # 数据库展示,Widget（Done）
     # 界面切换，使用stack进行顶部切换即可，， UI继续优化  （done）
-
+    # CSS 界面， （todo）
 '''
