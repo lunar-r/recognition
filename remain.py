@@ -4,9 +4,11 @@ import sys
 import time
 import copy
 import json
+
 import logging
 import datetime
 import face_recognition
+from mtcnn.mtcnn import MTCNN
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
@@ -123,6 +125,9 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.pre_train_flag = True
         self.pre_known_flag = True
 
+        self.pre_trained = False
+        self.pre_loaded = False
+
         with open("status.json", "r") as f:
             flags = json.load(f)
             self.pre_train_flag = flags["pre_train_flag"]
@@ -132,17 +137,16 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.set_log()
 
         if self.pre_known_flag is True:
-            self.load_known(self.img_url)
+            self.warp_load_known()
         else:
-            self.label_model_info.setText("known data for Resnet not be loaded.")
+            self.checkBox_load_database.setChecked(False)
+            self.label_model_info.setText("known data not be loaded.")
 
         if self.pre_train_flag is True:
-            f = datetime.datetime.now()
-            self.worker.pre_train(self.img_url)
-            s = datetime.datetime.now()
-            self.logger.debug("pre train of inception use %s seconds", str(s - f))
+            self.warp_pre_train()
         else:
-            self.label_accuracy_info.setText("pre train pof inception not be executed.")
+            self.checkBox_pretrain_model.setChecked(False)
+            self.label_accuracy_info.setText("pre train not be executed.")
 
         menu = QMenu()
         menu.addAction("Inception", self.select_model_ince)
@@ -291,6 +295,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.checkBox_load_database.stateChanged.connect(self.update_load_state)
         self.checkBox_pretrain_model.stateChanged.connect(self.update_model_state)
 
+        self.btn_open_img.clicked.connect(self.open_img)
+
     def update_load_state(self):
         cur = self.checkBox_load_database.isChecked()
         if cur is not self.pre_known_flag:
@@ -314,12 +320,25 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             self.logger.info("update init state of variables, pre_train: %s, known_data: %s", train, known)
 
     def warp_load_known(self):
+        if self.pre_loaded:
+            self.logger.debug("known data already has loaded ...")
+            self.logger.debug("load known data again ...")
+        self.pre_loaded = True
+        first = datetime.datetime.now()
         self.load_known(self.img_url)
+        second = datetime.datetime.now()
+        self.label_model_info.setText("resnet is ready ...")
+        self.logger.debug("upload known data for resnet use %s seconds ..", str(second - first))
 
     def warp_pre_train(self):
+        if self.pre_trained:
+            self.logger.debug("pre train already has finished ...")
+            self.logger.debug("pre train with data again ...")
+        self.pre_trained = True
         first = datetime.datetime.now()
         self.worker.pre_train(self.img_url)
         second = datetime.datetime.now()
+        self.label_class_info.setText("inception net is ready ...")
         self.logger.info("pre train for inception use %s seconds ..", str(second - first))
 
     def turn_left_page(self):
@@ -399,7 +418,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
     def face_analysis(self):
         self.stackedWidget.setCurrentWidget(self.page_face_anal)
-        pass
 
     def data_list(self):
         self.stackedWidget.setCurrentWidget(self.page_data_show)
@@ -417,7 +435,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def show_log(self, path):
         with open(path, 'r') as f:
             context = f.read()
-            print(context)
         self.text_logging.setText(context)
 
     def open_camera(self):
@@ -469,7 +486,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def load_known(self, root_dir):
         if root_dir is None:
             return
-        first = datetime.datetime.now()
         names = []
         encodings = []
         for name in os.listdir(root_dir):
@@ -487,8 +503,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
         self.known_names = names
         self.known_encodings = encodings
-        second = datetime.datetime.now()
-        self.logger.debug("upload known data for resnet use %s seconds ..", str(second - first))
 
     def set_names(self, data):
         names = list(filter(lambda x: x != '', data.split(",")))
@@ -529,6 +543,64 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         else:
             self.time_camera.stop()
             self.btn_open_camera.setText(u'打开摄像头')
+
+    def open_img(self):
+        if self.img_state:
+            self.label_img_origin.clear()
+            self.label_img_align.clear()
+            self.label_img_feature.clear()
+            self.label_img_info.clear()
+            self.btn_open_img.setText(u"打开图片")
+        else:
+            self.fname, type = QFileDialog.getOpenFileName(self, 'Open File', "D:/UserInfo/workDir/face/face_system/", "Image Files (*.jpg *.png)")
+            self.btn_open_img.setText(u"关闭图片")
+        self.img_state = not self.img_state
+        self.show_face_info()
+
+    def img_to_pixmap(self, url=None, image=None):
+        if url is not None:
+            img = cv2.imread(url)
+        else:
+            img = image
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img = QImage(img.data, img.shape[1], img.shape[0], img.shape[1] * 3, QImage.Format_RGB888)
+        res = QPixmap.fromImage(img)
+        return res
+
+    def show_face_info(self):
+        # origin <show>
+        self.label_img_origin.setPixmap(self.img_to_pixmap(url=self.fname))
+        # align  <work>
+        origin_img = cv2.imread(self.fname)
+        featured_img = copy.copy(origin_img)
+        align_img = copy.copy(origin_img)
+        align_img = cv2.cvtColor(align_img, cv2.COLOR_BGR2RGB)
+        align = self.worker.align_image(align_img)
+
+        #  from cv2 to pixmap
+        align = cv2.cvtColor(align, cv2.COLOR_RGB2BGR)
+        self.label_img_align.setPixmap(self.img_to_pixmap(image=align))
+        # feature <mtcnn>
+        detector = MTCNN()
+        res = detector.detect_faces(featured_img)
+        for ant in res:
+            box = ant['box']
+            points = ant['keypoints']
+            self.draw_points(featured_img, box, points)
+        self.label_img_feature.setPixmap(self.img_to_pixmap(image=featured_img))
+        # info
+        info = self.fname.rfind("/")
+        self.label_img_info.setText(self.fname[(info + 1):])
+        
+        # face info
+
+    def draw_points(self, img, box, keypoints):
+        cv2.rectangle(img, (box[0], box[1]), (box[0] + box[2], box[1] + box[3]), (0, 155, 255), 2)
+        cv2.circle(img, (keypoints['left_eye']), 2, (0, 155, 255), 2)
+        cv2.circle(img, (keypoints['right_eye']), 2, (0, 155, 255), 2)
+        cv2.circle(img, (keypoints['nose']), 2, (0, 155, 255), 2)
+        cv2.circle(img, (keypoints['mouth_left']), 2, (0, 155, 255), 2)
+        cv2.circle(img, (keypoints['mouth_right']), 2, (0, 155, 255), 2)
 
 
 if __name__ == '__main__':
