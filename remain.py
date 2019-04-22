@@ -135,6 +135,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
         self.set_ui(self)
         self.set_log()
+        self.label_welcome.setScaledContents(True)
+        self.label_welcome.setPixmap(QPixmap("./source/logos/image.png"))
 
         if self.pre_known_flag is True:
             self.warp_load_known()
@@ -161,7 +163,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.btn_select_class.setMenu(menu)
 
         self.offset = 0
-        self.idx = 5
+        self.idx = 6
         self.set_data()
         self.set_slot()
         self.setWindowTitle("FaceSystem")
@@ -233,7 +235,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                 continue
             if count >= offset + idx:
                 break
-            row = count - offset + 1
+            # row = count - offset + 1
+            row = count - offset
 
             item = QTableWidgetItem()
             item.setText(name)
@@ -338,7 +341,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         first = datetime.datetime.now()
         self.worker.pre_train(self.img_url)
         second = datetime.datetime.now()
-        self.label_class_info.setText("inception net is ready ...")
+        self.label_accuracy_info.setText("inception net is ready ...")
         self.logger.info("pre train for inception use %s seconds ..", str(second - first))
 
     def turn_left_page(self):
@@ -388,6 +391,10 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                 self.thd = FaceThread()
                 self.thd.set_img(self.frame)
                 self.thd.set_logger(self.logger)
+                if self.pre_trained is False:
+                    self.pre_trained = True
+                    self.logger.debug("pre train in show face")
+                    self.warp_pre_train()
                 self.thd.set_worker(self.worker)
                 self.thd.set_classifier(self.class_method)
                 self.thd.helper.signal.connect(self.set_names)
@@ -396,6 +403,10 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                 self.thd = ResThread()
                 temp = copy.copy(self.frame)
                 temp = cv2.resize(temp, (0, 0), fx=0.3, fy=0.3)
+                if self.pre_loaded is False:
+                    self.pre_loaded = True
+                    self.logger.debug("load known data in show face")
+                    self.warp_load_known()
                 self.thd.set_img(temp)
                 self.thd.set_logger(self.logger)
                 self.thd.set_dict(self.known_names, self.known_encodings)
@@ -406,6 +417,10 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def face_detect(self):
         self.stackedWidget.setCurrentWidget(self.page_index)
         self.face_detect_state = not self.face_detect_state
+        if self.face_detect_state is True:
+            self.btn_face_dect.setText("关闭人脸检测")
+        else:
+            self.btn_face_dect.setText("人脸检测")
 
     def face_reco(self):
         self.stackedWidget.setCurrentWidget(self.page_index)
@@ -593,7 +608,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.label_img_info.setText(self.fname[(info + 1):])
         
         # face info
-
     def draw_points(self, img, box, keypoints):
         cv2.rectangle(img, (box[0], box[1]), (box[0] + box[2], box[1] + box[3]), (0, 155, 255), 2)
         cv2.circle(img, (keypoints['left_eye']), 2, (0, 155, 255), 2)
@@ -618,4 +632,7 @@ if __name__ == '__main__':
     # 数据库展示,Widget（Done）
     # 界面切换，使用stack进行顶部切换即可，， UI继续优化  （done）
     # CSS 界面， （todo）
+    # 修复按键序列间的bug
 '''
+
+

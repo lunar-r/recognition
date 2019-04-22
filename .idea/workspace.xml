@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcc6b798-3a20-42d8-83d4-5ab623ff361e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/face_dete.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/face_info.log" beforeDir="false" afterPath="$PROJECT_DIR$/face_info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/remain.py" beforeDir="false" afterPath="$PROJECT_DIR$/remain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/status.json" beforeDir="false" afterPath="$PROJECT_DIR$/status.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/face_dete.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/grammar_t.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/grammar_t.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +17,7 @@
     <SUITE FILE_PATH="coverage/face_system$pytest_in_test_thread_py.coverage" NAME="pytest in test_thread.py Coverage Results" MODIFIED="1554890575521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/face_system$main.coverage" NAME="main Coverage Results" MODIFIED="1554012445873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$multi.coverage" NAME="multi Coverage Results" MODIFIED="1554946463409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/face_system$second_ui.coverage" NAME="second_ui Coverage Results" MODIFIED="1555468558850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/face_system$second_ui.coverage" NAME="second_ui Coverage Results" MODIFIED="1555919189590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/face_system$try_thread.coverage" NAME="try_thread Coverage Results" MODIFIED="1554901702809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/face_system$rename_file.coverage" NAME="rename_file Coverage Results" MODIFIED="1555061169047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/face_system$get_person.coverage" NAME="get_person Coverage Results" MODIFIED="1555415213853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
@@ -39,26 +36,26 @@
     <SUITE FILE_PATH="coverage/face_system$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1554346986764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$testUI.coverage" NAME="testUI Coverage Results" MODIFIED="1554948833495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/face_system$face_dete.coverage" NAME="face_dete Coverage Results" MODIFIED="1555555027002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
-    <SUITE FILE_PATH="coverage/face_system$remain.coverage" NAME="remain Coverage Results" MODIFIED="1555573165611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/face_system$remain.coverage" NAME="remain Coverage Results" MODIFIED="1555924697041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-2040295204">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="37" />
+          <entry key="project.closed" value="43" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.20" value="6" />
+          <entry key="project.open.time.20" value="9" />
           <entry key="project.open.time.21" value="5" />
           <entry key="project.open.time.22" value="2" />
           <entry key="project.open.time.23" value="3" />
           <entry key="project.open.time.24" value="1" />
-          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.25" value="2" />
           <entry key="project.open.time.26" value="3" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.29" value="1" />
@@ -66,7 +63,7 @@
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="39" />
+          <entry key="project.opened" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -74,9 +71,9 @@
           <entry key="gitignore" value="1" />
           <entry key="html" value="1" />
           <entry key="jpg" value="23" />
-          <entry key="json" value="6" />
-          <entry key="log" value="3" />
-          <entry key="png" value="8" />
+          <entry key="json" value="7" />
+          <entry key="log" value="4" />
+          <entry key="png" value="10" />
           <entry key="py" value="163" />
           <entry key="qss" value="5" />
         </counts>
@@ -85,8 +82,9 @@
         <counts>
           <entry key="CSS" value="5" />
           <entry key="HTML" value="1" />
-          <entry key="Image" value="31" />
-          <entry key="JSON" value="6" />
+          <entry key="Image" value="33" />
+          <entry key="JSON" value="7" />
+          <entry key="Log" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Python" value="163" />
         </counts>
@@ -95,87 +93,46 @@
         <counts>
           <entry key="dummy" value="62" />
           <entry key="gitignore" value="26" />
-          <entry key="json" value="21" />
-          <entry key="py" value="22260" />
-          <entry key="qss" value="474" />
+          <entry key="json" value="25" />
+          <entry key="py" value="22728" />
+          <entry key="qss" value="572" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="474" />
-          <entry key="JSON" value="21" />
+          <entry key="CSS" value="572" />
+          <entry key="JSON" value="25" />
           <entry key="PLAIN_TEXT" value="88" />
-          <entry key="Python" value="22260" />
+          <entry key="Python" value="22728" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/remain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="168" column="16" selection-start-line="168" selection-start-column="13" selection-end-line="168" selection-end-column="16" />
+            <state relative-caret-position="-1022">
+              <caret line="408" column="42" lean-forward="true" selection-start-line="408" selection-start-column="42" selection-end-line="408" selection-end-column="42" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1555572432356" expanded="true" signature="945:951" ph="..." />
-                <marker date="1555572432356" expanded="true" signature="2236:2242" ph="..." />
-                <marker date="1555572432356" expanded="true" signature="5641:6229" ph="..." />
-                <marker date="1555572432356" expanded="true" signature="10791:10796" ph="..." />
-                <marker date="1555572432356" expanded="true" signature="11090:11380" ph="..." />
-                <marker date="1555572432356" expanded="true" signature="20917:21281" ph="..." />
-                <marker date="1555572432356" expanded="true" signature="20997:21281" ph="..." />
-                <marker date="1555572432356" expanded="true" signature="21306:21315" ph="..." />
+                <marker date="1555917295615" expanded="true" signature="945:951" ph="..." />
+                <marker date="1555917295615" expanded="true" signature="2236:2242" ph="..." />
+                <marker date="1555917295615" expanded="true" signature="5766:6354" ph="..." />
+                <marker date="1555917295615" expanded="true" signature="10951:10956" ph="..." />
+                <marker date="1555917295615" expanded="true" signature="11250:11540" ph="..." />
+                <marker date="1555917295615" expanded="true" signature="21630:21994" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/status.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="47" selection-start-column="47" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/grammar_t.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/face_dete.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#148#158#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/element.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="300" column="128" selection-start-line="300" selection-start-column="128" selection-end-line="300" selection-end-column="128" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/second_ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="355" column="70" selection-start-line="355" selection-start-column="70" selection-end-line="355" selection-end-column="70" />
+            <state relative-caret-position="200">
+              <caret line="150" column="63" selection-start-line="150" selection-start-column="63" selection-end-line="150" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -183,8 +140,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/stylesheet/main.qss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="46" column="72" selection-start-line="46" selection-start-column="72" selection-end-line="46" selection-end-column="72" />
+            <state relative-caret-position="130">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -200,29 +157,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>anal</find>
-      <find>face_analy</find>
-      <find>Box</find>
-      <find>open_imf</find>
-      <find>label_model_info</find>
-      <find>pre</find>
-      <find>known data</find>
-      <find>pre_loaded</find>
-      <find>pre_</find>
-      <find>pre_train</find>
-      <find>pre_trained</find>
-      <find>load_known</find>
-      <find>label_face</find>
-      <find>show_video</find>
-      <find>video</find>
-      <find>face_analys</find>
-      <find>slot</find>
-      <find>img_state</find>
-      <find>face_anal</find>
-      <find>[.</find>
-      <find>label_face_info</find>
       <find>*3</find>
-      <find>btn_open_img</find>
       <find>open_img</find>
       <find>war</find>
       <find>warp_load_known</find>
@@ -230,6 +165,28 @@
       <find>page_</find>
       <find>qss</find>
       <find>label_img_feature</find>
+      <find>warp</find>
+      <find>left_page</find>
+      <find>centralwidget</find>
+      <find>stackedWidget</find>
+      <find>label_video</find>
+      <find>label_img_info</find>
+      <find>butt</find>
+      <find>label1</find>
+      <find>resize</find>
+      <find>face_rec</find>
+      <find>face_reco</find>
+      <find>face</find>
+      <find>self.th</find>
+      <find>pre_loaded</find>
+      <find>label_welcome</find>
+      <find>face_dete</find>
+      <find>btn_open_img</find>
+      <find>turn</find>
+      <find>show_data</find>
+      <find>idx</find>
+      <find>database_show</find>
+      <find>fx</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -263,8 +220,8 @@
         <option value="$PROJECT_DIR$/face_dete.py" />
         <option value="$PROJECT_DIR$/utils/grammar_t.py" />
         <option value="$PROJECT_DIR$/status.json" />
-        <option value="$PROJECT_DIR$/remain.py" />
         <option value="$PROJECT_DIR$/source/stylesheet/main.qss" />
+        <option value="$PROJECT_DIR$/remain.py" />
         <option value="$PROJECT_DIR$/second_ui.py" />
       </list>
     </option>
@@ -275,7 +232,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -287,7 +244,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -304,12 +260,19 @@
               <item name="face_system" type="b2602c69:ProjectViewProjectNode" />
               <item name="face_system" type="462c0819:PsiDirectoryNode" />
               <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheet" type="462c0819:PsiDirectoryNode" />
+              <item name="logos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="face_system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="face_system" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="video" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -320,17 +283,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\UserInfo\workDir\face\face_system\source\video" />
-      <recent name="D:\UserInfo\workDir\face\face_system\tests" />
-      <recent name="D:\UserInfo\workDir\face\face_system" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\UserInfo\workDir\face\face_system" />
       <recent name="D:\UserInfo\workDir\face\face_system\source\ui" />
       <recent name="D:\UserInfo\workDir\face\face_system\tests" />
       <recent name="D:\UserInfo\workDir\face\face_system\source\images" />
       <recent name="D:\UserInfo\workDir\face\face_system\source" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UserInfo\workDir\face\face_system\source\logos" />
+      <recent name="D:\UserInfo\workDir\face\face_system\source\video" />
+      <recent name="D:\UserInfo\workDir\face\face_system\tests" />
+      <recent name="D:\UserInfo\workDir\face\face_system" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -466,10 +430,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.remain" />
+        <item itemvalue="Python.second_ui" />
         <item itemvalue="Python.grammar_t" />
         <item itemvalue="Python.face_dete (1)" />
         <item itemvalue="Python.face_dete" />
-        <item itemvalue="Python.second_ui" />
       </list>
     </recent_temporary>
   </component>
@@ -504,15 +468,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1536" height="864" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26974565" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28647926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32991013" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22464699" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22336328" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3992298" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -559,26 +523,7 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/remain.py</url>
-          <line>556</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/numpy/lib/shape_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="572" selection-start-line="572" selection-end-line="572" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thread_try.py" />
     <entry file="file://$PROJECT_DIR$/errors.jpg" />
     <entry file="file://$PROJECT_DIR$/tests/python_2019-04-10_21-20-26.png" />
     <entry file="file://$PROJECT_DIR$/tests/main_ui.png" />
@@ -694,9 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/face_info.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/status.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -722,20 +664,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/images/Donald_Trump/Donald_Trump_1013.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/grammar_t.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/status.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="47" selection-start-column="47" selection-end-column="47" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/copy.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -768,52 +696,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/face_dete.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/grammar_t.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/element.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="618">
           <caret line="300" column="128" selection-start-line="300" selection-start-column="128" selection-end-line="300" selection-end-column="128" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/face_dete.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#148#158#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/face_info.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+      <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/remain.py">
+    <entry file="file://$PROJECT_DIR$/status.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="168" column="16" selection-start-line="168" selection-start-column="13" selection-end-line="168" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1555572432356" expanded="true" signature="945:951" ph="..." />
-            <marker date="1555572432356" expanded="true" signature="2236:2242" ph="..." />
-            <marker date="1555572432356" expanded="true" signature="5641:6229" ph="..." />
-            <marker date="1555572432356" expanded="true" signature="10791:10796" ph="..." />
-            <marker date="1555572432356" expanded="true" signature="11090:11380" ph="..." />
-            <marker date="1555572432356" expanded="true" signature="20917:21281" ph="..." />
-            <marker date="1555572432356" expanded="true" signature="20997:21281" ph="..." />
-            <marker date="1555572432356" expanded="true" signature="21306:21315" ph="..." />
-          </folding>
+        <state>
+          <caret column="49" selection-start-column="49" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/stylesheet/main.qss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="46" column="72" selection-start-line="46" selection-start-column="72" selection-end-line="46" selection-end-column="72" />
+        <state relative-caret-position="130">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/second_ui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="355" column="70" selection-start-line="355" selection-start-column="70" selection-end-line="355" selection-end-column="70" />
+        <state relative-caret-position="200">
+          <caret line="150" column="63" selection-start-line="150" selection-start-column="63" selection-end-line="150" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/logos/image.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/logos/image.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/remain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1022">
+          <caret line="408" column="42" lean-forward="true" selection-start-line="408" selection-start-column="42" selection-end-line="408" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1555917295615" expanded="true" signature="945:951" ph="..." />
+            <marker date="1555917295615" expanded="true" signature="2236:2242" ph="..." />
+            <marker date="1555917295615" expanded="true" signature="5766:6354" ph="..." />
+            <marker date="1555917295615" expanded="true" signature="10951:10956" ph="..." />
+            <marker date="1555917295615" expanded="true" signature="11250:11540" ph="..." />
+            <marker date="1555917295615" expanded="true" signature="21630:21994" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
